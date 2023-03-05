@@ -1,0 +1,47 @@
+.profile {
+  background-color: black;
+  max-width: 1280px;
+  margin: auto;
+  display: flex;
+}
+
+.profile_title {
+  line-height: 1.429;
+  font-size: 42px;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+}
+
+.profile__image {
+  border-radius: 50%;
+}
+
+.profile_paragraph {
+  display: grid;
+  grid-template-columns: max-content;
+  grid-template-rows: repeat(2, 0.5fr);
+  grid-template-areas: "title button" "subtitle subtitle";
+}
+
+.profile__subtitle {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.222;
+  color: #fff;
+}
+
+.profile__button-edit {
+}
+
+.profile__button-icon-edit {
+  border-style: none;
+}
+
+.profile__button-add {
+  border-radius: 2px;
+  width: 150px;
+  height: 50px;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+}

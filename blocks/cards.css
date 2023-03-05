@@ -1,0 +1,16 @@
+.cards {
+  padding-left: 200px;
+  padding-right: 200px;
+  margin: 0 auto;
+  max-width: 880px;
+  max-height: 742px;
+}
+
+.cards__list {
+  display: grid;
+  grid-template-columns: repeat(autofit, 282px);
+  grid-gap: 20px 17px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
