@@ -8,25 +8,36 @@
 }
 
 .card__image {
-  max-width: 282px;
-  max-height: 282px;
+  width: 282px;
+  height: 282px;
+  object-fit: cover;
 }
 
 .card__description {
   display: flex;
   justify-content: space-between;
+  background-color: #fff;
+  padding: 25px 21px 25px 21px;
 }
 
 .card__title {
   font-size: 24px;
   font-weight: 900;
   line-height: 1.2;
+  text-align: left;
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
 }
 
 .card__button {
-  background-color: black;
+  background-color: #fff;
   cursor: pointer;
   transition: opacity 0.3s linear;
+  border: 0;
+  padding: 0;
 }
 
 .card__button:hover {

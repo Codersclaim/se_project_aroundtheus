@@ -1,6 +1,4 @@
 .cards {
-  padding-left: 200px;
-  padding-right: 200px;
   margin: 0 auto;
   max-width: 880px;
   max-height: 742px;
@@ -8,9 +6,15 @@
 
 .cards__list {
   display: grid;
-  grid-template-columns: repeat(autofit, 282px);
+  grid-template-columns: repeat(auto-fit, 282px);
   grid-gap: 20px 17px;
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+@media screen and (max-width: 320px) {
+  .cards__list {
+    padding: 15px 0 18px;
+  }
 }
