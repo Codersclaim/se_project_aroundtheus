@@ -10,7 +10,7 @@
   margin: 0;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 450px) {
   .font__text {
     font-size: 14px;
     font-weight: 400;

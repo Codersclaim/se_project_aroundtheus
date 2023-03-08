@@ -1,6 +1,6 @@
 .profile {
   max-width: 880px;
-  margin: 40px auto 51px;
+  margin: 40px auto 0;
   display: flex;
 }
 
@@ -39,6 +39,7 @@
   text-align: left;
   grid-area: subtitle;
   margin: 0;
+  margin-bottom: 72px;
 }
 
 .profile__button-edit {
@@ -48,10 +49,10 @@
   transition: opacity 0.3s linear;
   opacity: 1;
   cursor: pointer;
-  margin-left: 18px;
+
   border: 1px solid #fff;
   padding: 0;
-  margin-top: 20px;
+  margin: 20px 0 0 18px;
 }
 
 .profile__button-edit:hover {
@@ -239,7 +240,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 450px) {
   .profile {
     max-width: 282px;
     display: flex;
@@ -264,6 +265,7 @@
     justify-content: center;
     align-self: center;
     margin-left: 10px;
+    margin-bottom: 14px;
   }
   .profile__button-icon-edit {
     height: 7.5px;
@@ -283,6 +285,7 @@
     text-align: center;
     margin-top: 26.25px;
     align-self: center;
+    margin-bottom: 14px;
   }
   .profile__subtitle {
     justify-self: center;
