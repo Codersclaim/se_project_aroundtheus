@@ -4,7 +4,7 @@
   display: flex;
 }
 
-.profile_title {
+.profile__title {
   line-height: 1.429;
   font-size: 42px;
   font-weight: 400;
@@ -23,7 +23,7 @@
   padding: 3.75px 26px 3.75px 21px;
 }
 
-.profile_paragraph {
+.profile__paragraph {
   display: grid;
   grid-template-columns: max-content;
   grid-template-rows: repeat(2, 0.5fr);
@@ -87,7 +87,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .profile_paragraph {
+  .profile__paragraph {
     max-width: max-content;
     align-content: center;
   }
@@ -97,7 +97,7 @@
     margin-left: 20px;
     margin-right: 20px;
   }
-  .profile_title {
+  .profile__title {
     font-weight: 500;
   }
   .profile__image {
@@ -143,7 +143,7 @@
     justify-self: center;
     margin: 0;
   }
-  .profile_title {
+  .profile__title {
     font-size: 22px;
     font-weight: 500;
 
