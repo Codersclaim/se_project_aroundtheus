@@ -9,7 +9,7 @@
 .header__logo {
   width: 173px;
   height: 33px;
-  margin: 45px auto 41px 0;
+  margin: 45px auto 41px 20px;
 }
 
 .header__logo:hover {
@@ -25,3 +25,4 @@
     margin-left: 20px;
   }
 }
+

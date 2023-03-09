@@ -13,8 +13,7 @@
 @media screen and (max-width: 450px) {
   .font__text {
     font-size: 14px;
-    font-weight: 400;
-    font-family: "Inter", sans-serif;
+
     line-height: 17px;
     margin: 48px 19px 36px;
   }
