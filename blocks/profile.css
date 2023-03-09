@@ -97,7 +97,7 @@
   }
 
   .profile__button-add {
-    width: 0;
+    padding: 14px 64px 14px 64px;
 
     margin-right: 20px;
   }
