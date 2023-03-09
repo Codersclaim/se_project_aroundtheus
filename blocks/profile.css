@@ -87,10 +87,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .profile__button-add {
-    margin: auto;
-    padding: 17px 133px 17px;
-  }
   .profile_paragraph {
     max-width: max-content;
     align-content: center;
@@ -98,7 +94,7 @@
 
   .profile__button-add {
     padding: 14px 64px 14px 64px;
-
+    margin-left: 20px;
     margin-right: 20px;
   }
   .profile_title {
