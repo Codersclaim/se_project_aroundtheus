@@ -2,14 +2,20 @@
 
 ### Overview  
 
-* Intro  
+* Intro 
+* Description 
 * Figma  
-* Images  
+* Images 
+* Link 
   
 **Intro**
   
 This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
   
+**Description**
+
+This project shows the uses of media query toward different devices toward mobile and desktop resolutions. It also displays grid layouts involving display: grid.
+
 **Figma**  
   
 * [Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)  
@@ -18,4 +24,8 @@ This project is made so all the elements are displayed correctly on popular scre
   
 The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
   
+**Link**
+
+* [Link to Github pages](https://codersclaim.github.io/se_project_aroundtheus)  
+
 Good luck and have fun!
