@@ -2,8 +2,7 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+
   overflow: hidden;
 }
 
@@ -33,7 +32,6 @@
 }
 
 .card__button {
-  background-color: #fff;
   cursor: pointer;
   transition: opacity 0.3s linear;
   border: 0;
