@@ -10,6 +10,7 @@
   margin: 0;
   font-size: 18px;
   line-height: 22px;
+  margin: 0 0 0 120px;
 }
 
 @media screen and (max-width: 450px) {

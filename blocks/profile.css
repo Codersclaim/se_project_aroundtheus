@@ -2,6 +2,7 @@
   max-width: 880px;
   margin: 40px auto 0;
   display: flex;
+  align-items: center;
 }
 
 .profile__title {
@@ -20,7 +21,7 @@
   border-radius: 50%;
   width: 120px;
   height: 120px;
-  padding: 3.75px 26px 3.75px 21px;
+  margin: 0 26px 47.25px 0;
 }
 
 .profile__paragraph {
@@ -39,7 +40,7 @@
   text-align: left;
   grid-area: subtitle;
   margin: 0;
-  margin-bottom: 72px;
+  margin-bottom: 0;
 }
 
 .profile__button-edit {
