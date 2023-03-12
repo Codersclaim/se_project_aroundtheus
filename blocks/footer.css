@@ -1,6 +1,7 @@
 .footer {
-  margin: 67px 120px 0;
+  margin: 67px auto 0;
   text-align: left;
+  max-width: 880px;
 }
 
 .footer__text {
@@ -14,10 +15,15 @@
 }
 
 @media screen and (max-width: 450px) {
-  .font__text {
+  .footer__text {
     font-size: 14px;
     display: block;
     line-height: 17px;
     margin: 48px 19px 36px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer__text {
+    margin-left: 20px;
   }
 }
