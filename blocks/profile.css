@@ -97,10 +97,7 @@
 }
 
 @media screen and (max-width: 757px) {
-  .profile {
-    margin: 0 19px 36px;
-  }
-
+  
   .profile__paragraph {
     max-width: max-content;
     align-content: center;
