@@ -14,12 +14,12 @@
 
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 757px) {
   .header__logo {
     margin-left: 20px;
   }
 }
-  @media screen and (max-width: 615px) {
+  @media screen and (max-width: 450px) {
   .header {
     min-height: 56px;
   }

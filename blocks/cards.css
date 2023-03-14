@@ -22,7 +22,7 @@
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 757px) {
   .cards__list {
     justify-content: center;
   }
