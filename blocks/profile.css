@@ -1,12 +1,12 @@
 .profile {
   max-width: 880px;
-  margin: 0 auto 0;
+  margin: auto;
   display: flex;
   align-items: center;
 }
 
 .profile__title {
-  line-height: 1.429;
+  line-height: 48px;
   font-size: 42px;
   font-weight: 500;
   font-family: "Inter", sans-serif;
@@ -23,7 +23,7 @@
   border-radius: 50%;
   width: 120px;
   height: 120px;
-  margin: 0 26.25px 47.25px 0;
+  margin: 40px 30px 51px 0;
 }
 
 .profile__paragraph {
@@ -31,14 +31,13 @@
   grid-template-columns: max-content;
   grid-template-rows: repeat(2, 0.5fr);
   grid-template-areas: "title button" "subtitle subtitle";
-  margin-bottom: auto;
 }
 
 .profile__subtitle {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 18px;
-  line-height: 1.222;
+  line-height: 22px;
   color: #fff;
   text-align: left;
   grid-area: subtitle;
@@ -46,6 +45,7 @@
   margin-bottom: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
+  margin-left: 3.75px;
 }
 
 .profile__button-edit {
@@ -57,7 +57,9 @@
   background-color: transparent;
   border: 1px solid #fff;
   padding: 0;
-  margin: 77px 0 0 18px;
+  margin-left: 18px;
+  align-self: center;
+  box-sizing: border-box;
 }
 
 .profile__button-edit:hover {
@@ -81,6 +83,7 @@
   justify-content: center;
   margin-left: auto;
   cursor: pointer;
+  margin-top: auto;
 }
 
 .profile__button-add:hover {
@@ -92,6 +95,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .profile {
+    margin: 0 19px 36px;
+  }
+
   .profile__paragraph {
     max-width: max-content;
     align-content: center;
@@ -109,18 +116,19 @@
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 615px) {
   .profile {
     max-width: 282px;
 
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    margin: 0 19px 36px;
+    margin: auto;
   }
   .profile__button-add {
     margin: 0;
     width: 282px;
+    margin-bottom: 36px;
   }
   .profile__button-add-icon {
     width: 16px;
@@ -133,7 +141,7 @@
     justify-content: center;
     align-self: center;
     margin-left: 10px;
-    margin-bottom: 14px;
+    margin-bottom: 0;
   }
   .profile__button-icon-edit {
     height: 7.5px;
@@ -144,6 +152,7 @@
   .profile__image {
     justify-self: center;
     margin: 0;
+    margin-top: 42px;
   }
   .profile__title {
     font-size: 22px;
@@ -156,5 +165,8 @@
   }
   .profile__subtitle {
     justify-self: center;
+    margin-bottom: 36px;
+    font-size: 14px;
+    line-height: 17px;
   }
 }

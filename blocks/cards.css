@@ -11,3 +11,19 @@
   margin: 0;
   padding: 0;
 }
+
+
+
+@media screen and (max-width: 911px) {
+  .cards__list {
+    justify-content: center;
+    margin: auto;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .cards__list {
+    justify-content: center;
+  }
+}
