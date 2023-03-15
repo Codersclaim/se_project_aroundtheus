@@ -13,9 +13,17 @@
   font-size: 18px;
   line-height: 22px;
 }
+
+@media screen and (max-width: 888px) {
+  .footer__text {
+    margin-left: 21px;
+  }
+}
+
 @media screen and (max-width: 757px) {
   .footer__text {
-    margin-left: 20px;
+    margin-left: 19px;
+    margin-right: 19px;
   }
 
   @media screen and (max-width: 450px) {
