@@ -20,6 +20,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  min-width: 373px;
 }
 
 .profile__image {
@@ -31,9 +32,10 @@
 
 .profile__paragraph {
   display: grid;
-  grid-template-columns: max-content;
+  grid-template-columns: minmax(auto, 196px) 36px;
 
   grid-template-areas: "title button" "subtitle subtitle";
+  justify-content: center;
 }
 
 .profile__subtitle {
@@ -50,6 +52,7 @@
   white-space: nowrap;
   margin-left: 3.75px;
   overflow: hidden;
+  max-width: 415px;
 }
 
 .profile__button-edit {
@@ -98,7 +101,7 @@
   align-self: center;
 }
 
-@media screen and (max-width: 757px) {
+/*@media screen and (max-width: 757) {
   .profile__paragraph {
     max-width: max-content;
     align-content: center;
@@ -118,9 +121,9 @@
   .profile__title {
     text-overflow: ellipsis;
   }
-}
+}*/
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 757px) {
   .profile {
     max-width: 282px;
 
@@ -166,11 +169,13 @@
     margin-top: 30px;
     align-self: center;
     margin-bottom: 14px;
+    min-width: 196px;
   }
   .profile__subtitle {
     justify-self: center;
     margin-bottom: 36px;
     font-size: 14px;
     line-height: 17px;
+    max-width: 282px;
   }
 }

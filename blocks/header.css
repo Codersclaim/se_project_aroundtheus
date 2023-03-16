@@ -4,6 +4,8 @@
   flex-direction: column;
   max-width: 880px;
   margin: auto;
+  margin-top: 28px;
+  margin-bottom: 32px;
 }
 
 .header__logo {
