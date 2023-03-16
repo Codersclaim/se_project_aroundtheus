@@ -18,15 +18,14 @@
   }
 }
 
-
 @media screen and (max-width: 757px) {
   .header__logo {
     margin-left: 20px;
   }
 }
-  @media screen and (max-width: 450px) {
+@media screen and (max-width: 450px) {
   .header {
-    min-height: 56px;
+    min-height: 24px;
   }
 
   .header__logo {

@@ -19,6 +19,7 @@
   margin-left: 3.75px;
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .profile__image {
@@ -31,7 +32,7 @@
 .profile__paragraph {
   display: grid;
   grid-template-columns: max-content;
-  grid-template-rows: repeat(2, 0.5fr);
+
   grid-template-areas: "title button" "subtitle subtitle";
 }
 
@@ -48,6 +49,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   margin-left: 3.75px;
+  overflow: hidden;
 }
 
 .profile__button-edit {
@@ -97,7 +99,6 @@
 }
 
 @media screen and (max-width: 757px) {
-  
   .profile__paragraph {
     max-width: max-content;
     align-content: center;
@@ -112,6 +113,10 @@
   .profile__image {
     display: flex;
     justify-content: left;
+  }
+
+  .profile__title {
+    text-overflow: ellipsis;
   }
 }
 
