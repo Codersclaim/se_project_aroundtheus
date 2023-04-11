@@ -1,20 +1,28 @@
-# Project 3: Around The U.S.
+# Project 4: Around The U.S. (part 2)
 
 ### Overview  
 
 * Intro 
-* Description 
+* Features
+* Future improvements
 * Figma  
 * Images 
 * Link 
   
 **Intro**
   
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
+This project is includes the third and fourth project from Practicum. All the elements are displayed correctly on popular screen sizes . This project features modal box, media query, flexbox. This project includes card elements rendered through javascript using template tags through HTML. The page is responsive through desktop and mobile.
   
-**Description**
+**Features**
+* Flexbox
+* Grid layout
+* Flat BEM 
+* Media queries
+* Semantic tags for HTML
+* Images/Card Elements rendered through javascript 
 
-This project shows the uses of media query toward different devices toward mobile and desktop resolutions. It also displays grid layouts involving display: grid.
+ **Future improvements**
+Improving functionality for users to add and remove cards from the webpage for more interactivity. 
 
 **Figma**  
   
