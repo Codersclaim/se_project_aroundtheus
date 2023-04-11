@@ -101,27 +101,6 @@
   align-self: center;
 }
 
-/*@media screen and (max-width: 757) {
-  .profile__paragraph {
-    max-width: max-content;
-    align-content: center;
-  }
-
-  .profile__button-add {
-    padding: 14px 64px 14px 64px;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  .profile__image {
-    display: flex;
-    justify-content: left;
-  }
-
-  .profile__title {
-    text-overflow: ellipsis;
-  }
-}*/
 
 @media screen and (max-width: 757px) {
   .profile {
