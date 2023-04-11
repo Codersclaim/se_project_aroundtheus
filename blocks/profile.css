@@ -38,7 +38,7 @@
   justify-content: center;
 }
 
-.profile__subtitle {
+.profile__description {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -171,7 +171,7 @@
     margin-bottom: 14px;
     min-width: 196px;
   }
-  .profile__subtitle {
+  .profile__description {
     justify-self: center;
     margin-bottom: 36px;
     font-size: 14px;

@@ -39,9 +39,9 @@
               alt="edit profile"
             />
           </button>
-          <p class="profile__subtitle">Explorer</p>
+          <p class="profile__description">Explorer</p>
         </div>
-        <button class="profile__button-add" type="button">
+        <button class="profile__button-add"  type="button">
           <img
             class="profile__button-add-icon"
             src="./images/vectors/plus.svg"
@@ -146,31 +146,35 @@
       <div class="modal__container">
         <button class="modal__close" id="profile-close-button"></button>
 
-        <p class="modal__heading">Edit Profile</p>
+        <h3 class="modal__heading">Edit Profile</h3>
 
-        <fieldset class="modal__name">
-          <label id="name" class="modal__name-label"></label>
+        <form class="modal__form">
+          
           <input
             type="text"
-            class="modal__name-text"
+            class="modal__input"
             id="profile-title-input"
-            name="Name"
+            name="title"
             placeholder="Name"
           />
 
-          <label id="Title" class="modal__name-label"></label>
+          
           <input
             type="text"
-            class="modal__name-text"
-            id="profile-subtitle-input"
-            name="Title"
+            class="modal__input"
+            id="profile-description-input"
+            name="description"
             placeholder="Description"
           />
-        </fieldset>
+        
+        
+            <button type="submit" class="modal__button">Save</button>
+          
+        
+        
+        </form>
 
-        <fieldset class="modal__save">
-          <button type="submit" class="modal__button">Save</button>
-        </fieldset>
+        
       </div>
     </div>
 
