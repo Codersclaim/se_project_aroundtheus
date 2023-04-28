@@ -55,6 +55,9 @@ const cardTemplate =
 
   const cardTitleInput = addCardFormElement.querySelector(".modal__input_type_title");
   const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
+  
+  
+ 
 
 // Functions
 
@@ -72,6 +75,14 @@ function getCardElement(cardData) {
 }
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
+
+const likeButtons = document.querySelectorAll(".card__button");
+
+likeButtons.forEach(likeButton =>{
+  likeButton.addEventListener("click", () => {
+    
+})
+})
 
 function renderCard(cardData, listel) {
   const cardElement = getCardElement(cardData);
