@@ -10,7 +10,7 @@
   opacity: 0;
   padding: 0 19px;
   transition: visibility 0s linear .3s, opacity 0.3s linear;
-  visibility:hidden
+  visibility:hidden;
 }
 .modal_opened {
   
@@ -37,8 +37,8 @@
   cursor: pointer;
   top: -45px;
   right: -45px;
-  bottom: calc(100% + 5px);
-  left: calc(100% +5px);
+  bottom: calc( 100% + 5px);
+  left: calc( 100% +5px);
 
   width: 40px;
   height: 40px;
