@@ -2,7 +2,7 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-
+position: relative;
   overflow: hidden;
 }
 
@@ -57,10 +57,9 @@
     no-repeat;
   margin: 0;
   border: none;
-  position: relative;
+  position: absolute;
   top: 20px;
   right: 18px;
-  left: 249px;
   cursor: pointer;
   width: 18px;
   height: 19.3px;
