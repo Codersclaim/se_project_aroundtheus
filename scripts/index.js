@@ -126,6 +126,8 @@ function handleAddCardFormSubmit(e) {
   renderCard({ name, link }, cardListEl);
 
   closeModal(addCardModal);
+  let form = document.querySelector(cardListEl);
+  form.reset()
 }
 function openModal(modal) {
   modal.classList.add("modal_opened");
