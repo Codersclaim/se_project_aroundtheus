@@ -10,6 +10,7 @@ position: relative;
   width: 282px;
   height: 282px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .card__description {
@@ -64,6 +65,7 @@ position: relative;
   width: 18px;
   height: 19.3px;
   padding: 0;
+  transition: .5s;
 }
 
 .card__delete-button:hover {
