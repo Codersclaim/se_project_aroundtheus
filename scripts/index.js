@@ -48,7 +48,7 @@ const profileTitleName = document.querySelector("#profile-title-name");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-name"
 );
-const profileDescriptionName = document.querySelector("#profile-description-input")
+const profileDescriptionName = document.querySelector("#card-description-input")
 const profileEditForm = profileModal.querySelector(".modal__form");
 const addCardFormElement = addCardModal.querySelector(".modal__form");
 const cardListEl = document.querySelector(".cards__list");
@@ -63,8 +63,8 @@ const modalImagePreview = document.querySelector("#modal-preview-image");
 const modalImage = modalImagePreview.querySelector(".modal__image");
 const modalCaption = modalImagePreview.querySelector(".modal__preview-caption");
 const previewExitButton = modalImagePreview.querySelector(".modal__close");
-let form = document.querySelector("#add-card-form");
-  form.reset();
+let card = document.querySelector("#add-card-form");
+  card.reset();
 // Functions
 
 function closeModal(modal) {
