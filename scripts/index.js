@@ -116,7 +116,7 @@ function renderCard(cardData, listel) {
 // Event handlers
 function handleProfileEditSubmit(e) {
   e.preventDefault();
-  profileTitle.textContent = modalTitleName.value;
+  profileTitle.textContent = profileTitleName.value;
   profileDescription.textContent = profileDescriptionInput.value;
   closeModal(profileModal);
 }
