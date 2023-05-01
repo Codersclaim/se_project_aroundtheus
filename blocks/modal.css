@@ -22,6 +22,7 @@
 .modal__container {
   position: relative;
   background-color: #fff;
+  padding-bottom: 30px;
 
   border-radius: 10px;
   margin: auto;
@@ -45,6 +46,7 @@
   background-image: url(../images/vectors/close.svg);
   background-repeat: no-repeat;
   background-size: contain;
+  transition-property: all;
 }
 
 .modal__close:hover {
@@ -54,7 +56,7 @@
 .modal__button {
   background-color: #000;
   border: none;
-min-width: 358px;
+width: 100%;
   color: #fff;
   padding: 0;
   font-size: 18px;
@@ -81,7 +83,7 @@ min-width: 358px;
 }
 
 .modal__input {
-  min-width: 358px;
+  width: 100%;
   height: 14px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -125,7 +127,7 @@ min-width: 358px;
     font-size: 14px;
     line-height: 17px;
     font-weight: 400;
-    width: 100%;
+    
     height: 46px;
   }
 
@@ -139,7 +141,7 @@ min-width: 358px;
   .modal__input {
     font-size: 14px;
     line-height: 17px;
-    width: 100%;
+    
     height: 14px;
 
     margin-bottom: 30px;
@@ -168,6 +170,8 @@ display: flex;
 flex-direction: column;
 margin: auto;
 position: relative;
+margin-bottom: 26.74px;
+padding-bottom: 13.26px;
 }
 
 
