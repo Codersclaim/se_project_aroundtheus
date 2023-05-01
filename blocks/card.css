@@ -65,7 +65,7 @@ position: relative;
   width: 18px;
   height: 19.3px;
   padding: 0;
-  transition: .5s;
+  transition-property: all;
 }
 
 .card__delete-button:hover {
