@@ -12,10 +12,10 @@ function hideInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
   }
 function checkInputValidity(formEl, inputEl, options) {
 if (!inputEl.validity.valid) {
-showInputError(formEl, inputEl, options);
-} else {
+return showInputError(formEl, inputEl, options);
+} 
   hideInputError(formEl, inputEl, options);
-}
+
 }
 // submit button
 function toggleButtonState(inputEls, submitButton, {inactiveButtonClass}) {
@@ -27,11 +27,11 @@ if (!inputEl.validity.valid) {
   });
   if (foundInvalid) {
     submitButton.classList.add(inactiveButtonClass);
-    submitButton.disabled = true;
-  } else {
+    return submitButton.disabled = true;
+  } 
     submitButton.classList.remove(inactiveButtonClass);
     submitButton.disabled = false;
-  } 
+  
 }
 
 function setEventListeners(formEl, options) {
@@ -61,9 +61,9 @@ const config = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__button",
-  inactiveButtonClass: "popup__button_disabled",
-  inputErrorClass: "popup__input_type_error",
-  errorClass: "popup__error_visible"
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible"
 };
 
 enableValidation(config); 
