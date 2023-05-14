@@ -76,7 +76,11 @@
             id="profile-title-name"
             name="title"
             placeholder="Name"
+            minlength="2"
+            maxlength="40"
+            required
           />
+          <span class ="modal__error" id="profile-title-name-error"></span>
 
           <input
             type="text"
@@ -84,7 +88,11 @@
             id="profile-description-name"
             name="description"
             placeholder="Description"
+            minlength="2"
+            maxlength="200"
+            required
           />
+          <span class ="modal__error" id="profile-description-name-error"></span>
           <button type="submit" class="modal__button">Save</button>
         </form>
       </div>
@@ -141,6 +149,8 @@
       </li>
       
     </template>
+    <!-- scripts -->
     <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/validation.js" defer></script>
   </body>
 </html>
