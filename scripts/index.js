@@ -56,9 +56,9 @@ const cardListEl = document.querySelector(".cards__list");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 const cardTitleInput = addCardFormElement.querySelector(
-  ".modal__input_type_title"
+  "#modal-title-name"
 );
-const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
+const cardUrlInput = addCardFormElement.querySelector("#card-description-input");
 const modalImagePreview = document.querySelector("#modal-preview-image");
 const modalImage = modalImagePreview.querySelector(".modal__image");
 const modalCaption = modalImagePreview.querySelector(".modal__preview-caption");
