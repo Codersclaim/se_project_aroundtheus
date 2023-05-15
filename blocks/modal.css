@@ -136,6 +136,11 @@ border-bottom: 1px solid #FF0000;
   opacity: 1;
 }
 
+.modal__label {
+  position: relative;
+
+}
+
 
 @media screen and (min-width: 320px) and (max-width: 757px) {
   .modal__container {
