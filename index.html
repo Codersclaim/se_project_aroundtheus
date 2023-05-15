@@ -69,7 +69,7 @@
 
         <h3 class="modal__heading">Edit Profile</h3>
 
-        <form class="modal__form" >
+        <form class="modal__form" id="profile-form">
         <label class="modal__field">
           <input
             type="text"
@@ -109,6 +109,7 @@
         <h3 class="modal__heading">New Place</h3>
 
         <form class="modal__form" id="add-card-form">
+         <label>
           <input
             type="text"
             class="modal__input modal__input_type_title"
@@ -119,8 +120,10 @@
             maxlength="30"
             required
           />
-
-          <input
+     <span class="modal__error" id="modal__title-name-error"></span>
+    </label>
+        <label> 
+           <input
             type="url"
             class="modal__input modal__input_type_url"
             id="card-description-input"
@@ -128,6 +131,8 @@
             placeholder="Image URL"
             required
           />
+          <span class="modal__error" id="card__description-input-error"></span>
+        </label>
           <button type="submit" class="modal__button">Save</button>
         </form>
       </div>
