@@ -70,6 +70,7 @@
         <h3 class="modal__heading">Edit Profile</h3>
 
         <form class="modal__form" >
+        <label>
           <input
             type="text"
             class="modal__input"
@@ -93,6 +94,7 @@
             required
           />
           <span class ="modal__error" id="profile-description-name-error"></span>
+        </label>
           <button type="submit" class="modal__button">Save</button>
         </form>
       </div>
@@ -112,6 +114,9 @@
             id="modal-title-name"
             name="title"
             placeholder="Title"
+            minlength="1"
+            maxlength="30"
+            required
           />
 
           <input
@@ -120,6 +125,7 @@
             id="card-description-input"
             name="url"
             placeholder="Image URL"
+            required
           />
           <button type="submit" class="modal__button">Save</button>
         </form>
