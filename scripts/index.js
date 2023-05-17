@@ -59,12 +59,13 @@ const cardTitleInput = addCardFormElement.querySelector(
   "#modal-title-name"
 );
 const cardUrlInput = addCardFormElement.querySelector("#card-description-input");
+const cardSubmitButton = addCardFormElement.querySelector(".modal__button_disabled");
 const modalImagePreview = document.querySelector("#modal-preview-image");
 const modalImage = modalImagePreview.querySelector(".modal__image");
 const modalCaption = modalImagePreview.querySelector(".modal__preview-caption");
 const previewExitButton = modalImagePreview.querySelector(".modal__close");
-let card = document.querySelector("#add-card-form");
-  card.reset();
+
+  
 
 
 // Functions
@@ -109,9 +110,9 @@ function getCardElement(cardData) {
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
 
 
-function renderCard(cardData, listel) {
+function renderCard(cardData, listEl) {
   const cardElement = getCardElement(cardData);
-  listel.prepend(cardElement);
+  listEl.prepend(cardElement);
 }
 
 // Event handlers
@@ -126,12 +127,12 @@ function handleAddCardFormSubmit(e) {
   e.preventDefault();
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
-
+const cardInputList = Array.from(addCardFormElement.querySelectorAll(config.inputSelector));
   renderCard({ name, link }, cardListEl);
 
   closeModal(addCardModal);
-  e.target.reset();
-  
+  addCardFormElement.reset();
+  toggleButtonState(cardInputList, cardSubmitButton, config);
 }
 function openModal(modal) {
   modal.classList.add("modal_opened");
