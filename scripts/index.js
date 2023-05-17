@@ -85,11 +85,8 @@ function getCardElement(cardData) {
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
   });
-  const likeButtons = document.querySelectorAll(".card__button");
-
-  likeButtons.forEach((likeButton) => {
-    likeButton.addEventListener("click", () => {});
-  });
+  
+    
 
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
   cardDeleteButton.addEventListener("click", () => {
