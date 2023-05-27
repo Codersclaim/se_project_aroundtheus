@@ -127,8 +127,8 @@ function getCardElement(cardData) {
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl, card));
 
 
-function renderCard(cardData, listEl) {
-  const cardElement = getCardElement(cardData);
+function renderCard(cardData, listEl, card) {
+  const cardElement = new Card(cardData);
   listEl.prepend(cardElement);
 }
 
