@@ -1,4 +1,5 @@
 import Card from "../components/Card.js";
+//import FormValidator from "../components/FormValidator.js";
 
 const initialCards = [
   {
@@ -42,10 +43,18 @@ const initialCards = [
 
 
   const card = new Card(cardData, "#card-template");
+  card.getView();
  
   
   
-
+// const settings = {
+  
+//   inputSelector: ".modal__input",
+//   submitButtonSelector: ".modal__button",
+//   inactiveButtonClass: "modal__button_disabled",
+//   inputErrorClass: "modal__input_type_error",
+//   errorClass: "modal__error_visible",
+// }
 
 
 
@@ -106,9 +115,7 @@ function getCardElement(cardData) {
     likeButton.classList.toggle("card__like-button_active");
   });
   
-    
-
-  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
+    const cardDeleteButton = cardElement.querySelector(".card__delete-button");
   cardDeleteButton.addEventListener("click", () => {
     cardElement.remove();
   });
