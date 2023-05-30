@@ -131,14 +131,14 @@ function getCardElement(cardData) {
   return cardElement;
 }
 
-initialCards.forEach((cardData) => renderCard(cardData, cardListEl, cardElement));
+initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
 
 
-function renderCard(cardData, listEl, cardElement) {
-  const cardElement = new Card(cardData, "#cardTemplate");
-  listEl.prepend(cardElement);
+function renderCard(cardData, listEl) {
+  const card = new Card(cardData, "#card-template");
+  listEl.prepend(card);
 
-  return cardElement.getCard();
+  return card.getCard();
 }
 
 // Event handlers

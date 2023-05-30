@@ -37,7 +37,7 @@ getCard() {
   this._cardTitleEl = this._cardElement.querySelector(".card__title");
   this._cardImageEl = this._cardElement.querySelector(".card__image");
 
-  this._cardTitleEl.textContent = this_.name
+  this._cardTitleEl.textContent = this._name
   
   this._cardImageEl.src = this._link;
   this._cardImageEl.alt = this._name;
