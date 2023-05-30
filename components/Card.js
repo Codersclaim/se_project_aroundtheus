@@ -29,11 +29,6 @@ _likeButton() {
   this._cardElement.querySelector(".card__button").classList.toggle("card__like-button_active");
 }
 
- getView() {
-  this._cardElement = document.querySelector(this._cardSelector).content.querySelector(".card").cloneNode(true);
-
-  this._setEventListeners();
- }
 
 
 getCard() {
@@ -44,8 +39,8 @@ getCard() {
 
   this._cardTitleEl.textContent = this_.name
   
-  this._cardImageEl.src = this._cardData.link;
-  this._cardImageEl.alt = this._cardData.name;
+  this._cardImageEl.src = this._link;
+  this._cardImageEl.alt = this._name;
 
   this._setEventListeners();
 

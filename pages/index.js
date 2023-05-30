@@ -42,8 +42,8 @@ const initialCards = [
 
 
 
-  const card = new Card(cardData, "#card-template");
-  card.getView();
+  // const card = new Card(cardData, "#card-template");
+  // return card.getCard();
  
   
   
@@ -131,12 +131,14 @@ function getCardElement(cardData) {
   return cardElement;
 }
 
-initialCards.forEach((cardData) => renderCard(cardData, cardListEl, card));
+initialCards.forEach((cardData) => renderCard(cardData, cardListEl, cardElement));
 
 
-function renderCard(cardData, listEl, card) {
-  const cardElement = new Card(cardData);
+function renderCard(cardData, listEl, cardElement) {
+  const cardElement = new Card(cardData, "#cardTemplate");
   listEl.prepend(cardElement);
+
+  return cardElement.getCard();
 }
 
 // Event handlers
