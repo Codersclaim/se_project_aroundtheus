@@ -1,6 +1,6 @@
 import Card from "../components/Card.js";
-//import FormValidator from "../components/FormValidator.js";
-
+import FormValidator from "../components/FormValidator.js";
+import { openModal, closeModal } from "../utils/utils.js"
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -42,19 +42,18 @@ const initialCards = [
 
 
 
-  // const card = new Card(cardData, "#card-template");
-  // return card.getCard();
+
  
   
   
-// const settings = {
+ const settings = {
   
-//   inputSelector: ".modal__input",
-//   submitButtonSelector: ".modal__button",
-//   inactiveButtonClass: "modal__button_disabled",
-//   inputErrorClass: "modal__input_type_error",
-//   errorClass: "modal__error_visible",
-// }
+   inputSelector: ".modal__input",
+   submitButtonSelector: ".modal__button",
+   inactiveButtonClass: "modal__button_disabled",
+   inputErrorClass: "modal__input_type_error",
+   errorClass: "modal__error_visible",
+ }
 
 
 
@@ -160,6 +159,7 @@ const cardInputList = Array.from(addCardFormElement.querySelectorAll(config.inpu
   addCardFormElement.reset();
   toggleButtonState(cardInputList, cardSubmitButton, config);
 }
+
 function openModal(modal) {
   modal.classList.add("modal_opened");
  document.addEventListener("keydown", closePopupWithEscapeKeydown);
