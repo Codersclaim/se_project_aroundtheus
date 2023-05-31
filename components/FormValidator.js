@@ -1,7 +1,7 @@
 export default class FormValidator {
   constructor (settings, formEl) {
-
-  this.formEl = formEl;
+ 
+  this._formEl = formEl;
   this._inputSelector = settings._inputSelector;
   this._submitButtonSelector = settings._submitButtonSelector;
   this._inactiveButtonClass = settings._inactiveButtonClass;
@@ -71,11 +71,11 @@ _setEventListeners() {
 
   enableValidation() {
     
-      this._formEl.addEventListener("submit", (e) => {
+      this._formEls.addEventListener("submit", (e) => {
         e.preventDefault();
       });
   
-      this._setEventListeners(formEl, options);
+      this._setEventListeners();
   
 }
 
