@@ -1,6 +1,6 @@
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
-import { openModal, closeModal } from "../utils/utils.js"
+import { openModal, closeModal } from "../utils/utils.js";
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -34,10 +34,7 @@ const initialCards = [
 ];
 
 
- const cardData = {
-  name: "Yosemite Valley",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
- };
+ 
 
 
 
@@ -93,15 +90,18 @@ const modalImage = modalImagePreview.querySelector(".modal__image");
 const modalCaption = modalImagePreview.querySelector(".modal__preview-caption");
 const previewExitButton = modalImagePreview.querySelector(".modal__close");
 
-  
+const editFormValidator = new FormValidator(settings, profileEditForm);
+editFormValidator.enableValidation();
+const addFormValidator = new FormValidator(settings, addCardFormElement);
+addFormValidator.enableValidation();
 
 
 // Functions
 
-function closeModal(modal) {
-  modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", closePopupWithEscapeKeydown);
-}
+// function closeModal(modal) {
+//   modal.classList.remove("modal_opened");
+//   document.removeEventListener("keydown", closePopupWithEscapeKeydown);
+// }
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageEl = cardElement.querySelector(".card__image");
@@ -160,10 +160,10 @@ const cardInputList = Array.from(addCardFormElement.querySelectorAll(config.inpu
   toggleButtonState(cardInputList, cardSubmitButton, config);
 }
 
-function openModal(modal) {
-  modal.classList.add("modal_opened");
- document.addEventListener("keydown", closePopupWithEscapeKeydown);
-}
+// function openModal(modal) {
+//   modal.classList.add("modal_opened");
+//  document.addEventListener("keydown", closePopupWithEscapeKeydown);
+// }
 
 // Event listeners
 
@@ -211,3 +211,4 @@ function closeModalOnRemoteClick(evt) {
 modalImagePreview.addEventListener("mousedown", closeModalOnRemoteClick);
 profileModal.addEventListener("mousedown", closeModalOnRemoteClick);
 addCardModal.addEventListener("mousedown", closeModalOnRemoteClick);
+
