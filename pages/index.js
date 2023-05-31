@@ -135,9 +135,9 @@ initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
 
 function renderCard(cardData, listEl) {
   const card = new Card(cardData, "#card-template");
-  listEl.prepend(card);
+  listEl.prepend(card.getCard());
 
-  return card.getCard();
+   
 }
 
 // Event handlers
