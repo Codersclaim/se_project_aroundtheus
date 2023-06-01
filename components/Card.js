@@ -1,10 +1,12 @@
 import { openModal } from "../utils/utils.js"
 
 export default class Card {
-  constructor({name, link}, cardSelector) {
+  constructor({name, link}, cardSelector, handleImage ) {
 this._name = name;
 this._link = link;
 this._cardSelector = cardSelector;
+this._cardImageEl = cardImageEl;
+this._openModal = openModal;
   }
 
 _getTemplate() {
@@ -19,6 +21,11 @@ this._likeButton();
    this._cardElement.querySelector(".card__delete-button").addEventListener("click", () => {
 this._cardDeleteButton();
   })
+
+this._cardImageEl.addEventListener("click", () => {
+this._openModal(this._cardImageEl)
+});
+
 }
 
 _cardDeleteButton() {
@@ -30,6 +37,7 @@ _cardDeleteButton() {
 _likeButton() {
   this._cardElement.querySelector(".card__button").classList.toggle("card__like-button_active");
 }
+
 
 
 

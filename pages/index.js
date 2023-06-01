@@ -124,9 +124,9 @@ function getCardElement(cardData) {
     modalImage.alt = cardImageEl.alt;
     modalCaption.textContent = cardTitleEl.textContent;
   });
-  //previewExitButton.addEventListener("click", () => {
-   // closeModal(modalImagePreview);
- // });
+//   previewExitButton.addEventListener("click", () => {
+//    closeModal(modalImagePreview);
+//  });
   return cardElement;
 }
 
@@ -139,6 +139,13 @@ function renderCard(cardData, listEl) {
 
    
 }
+
+
+  const imagePopup = document.querySelector("#modal-preview-image");
+  imagePopup.open(cardData);
+
+
+
 
 // Event handlers
 function handleProfileEditSubmit(e) {

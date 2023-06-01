@@ -1,4 +1,4 @@
-function closePopupWithEscapeKeydown(evt) {
+ function closePopupWithEscapeKeydown(evt) {
   if (evt.key === "Escape") {
     const openedModal = document.querySelector(".modal_opened");
     closeModal(openedModal);
