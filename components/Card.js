@@ -1,11 +1,11 @@
 import { openModal } from "../utils/utils.js"
 
 export default class Card {
-  constructor({name, link}, cardSelector, handleImage ) {
+  constructor({name, link}, cardSelector, imagePopup ) {
 this._name = name;
 this._link = link;
 this._cardSelector = cardSelector;
-this._cardImageEl = cardImageEl;
+this._imagePopup = imagePopup;
 this._openModal = openModal;
   }
 
@@ -22,8 +22,18 @@ this._likeButton();
 this._cardDeleteButton();
   })
 
+_imagePopup() {
+  const imagePopup = document.querySelector("#modal-preview-image");
+  const cardImageEl = imagePopup.querySelector("modal__container-image");
+  const cardTitleEl = imagePopup.querySelector("modal__container-image");
+  cardImageEl.src = "" ;
+  cardImageEl.alt = "" ;
+  cardTitleEl.textContent = "" ;
+}
+
+
 this._cardImageEl.addEventListener("click", () => {
-this._openModal(this._cardImageEl)
+this._imagePopup()
 });
 
 }

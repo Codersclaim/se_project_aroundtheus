@@ -134,17 +134,16 @@ initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
 
 
 function renderCard(cardData, listEl) {
-  const card = new Card(cardData, "#card-template");
+  const card = new Card(cardData, "#card-template", openModal);
   listEl.prepend(card.getCard());
 
    
 }
 
-function openModal(data) {
+
   const imagePopup = document.querySelector("#modal-preview-image");
   imagePopup.open(data);
 imagePopup.setEventListeners();
-}
 
 
 // Event handlers

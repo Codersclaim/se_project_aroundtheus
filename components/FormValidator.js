@@ -29,7 +29,7 @@ _hideInputError(inputEl) {
 
 _checkInputValidity(inputEl) {
 if (!inputEl.validity.valid) {
-this._showinputError(inputEl);
+this._showInputError(inputEl);
 } else {
 this._hideInputError(inputEl);
 }
