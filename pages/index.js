@@ -140,11 +140,11 @@ function renderCard(cardData, listEl) {
    
 }
 
-
+function openModal(data) {
   const imagePopup = document.querySelector("#modal-preview-image");
-  imagePopup.open(cardData);
-
-
+  imagePopup.open(data);
+imagePopup.setEventListeners();
+}
 
 
 // Event handlers
