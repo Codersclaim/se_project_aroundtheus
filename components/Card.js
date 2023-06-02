@@ -22,20 +22,21 @@ this._likeButton();
 this._cardDeleteButton();
   })
 
-_imagePopup() {
-   this._imagePopup = document.querySelector("#modal-preview-image");
-   this._cardImageEl = this._imagePopup.querySelector("modal__container-image");
-  this._cardTitleEl = this._imagePopup.querySelector("modal__container-image");
-  this._cardImageEl.src = this_link ;
-  this._cardImageEl.alt =  this._name;
-  this._cardTitleEl.textContent = this._name;
-}
 
 
 this._cardImageEl.addEventListener("click", () => {
 this._imagePopup()
 });
 
+}
+
+_imagePopup() {
+  this._imagePopup = document.querySelector("#modal-preview-image");
+  this._cardImageEl = this._imagePopup.querySelector("modal__image");
+ this._cardTitleEl = this._imagePopup.querySelector("modal__preview-caption");
+ this._cardImageEl.src = this_link ;
+ this._cardImageEl.alt =  this._name;
+ this._cardTitleEl.textContent = this._name;
 }
 
 _cardDeleteButton() {
