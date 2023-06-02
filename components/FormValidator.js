@@ -1,24 +1,21 @@
 export default class FormValidator {
   constructor(settings, formEl) {
     this._formEl = formEl;
+    this._formSelector = settings.formSelector;
 
-    this._inputSelector = settings._inputSelector;
-    this._submitButtonSelector = settings._submitButtonSelector;
-    this._inactiveButtonClass = settings._inactiveButtonClass;
-    this._inputErrorClass = settings._inputErrorClass;
-    this._errorClass = settings._errorClass;
-    this._inputEls = [...this._formEl.querySelectorAll(this._inputSelector)];
+    this._submitButton;
+    this._inputEls = settings.inputSelector;
   }
 
   _showinputError(inputEl) {
-    this._element = this._formEl.querySelector(`#${inputEl.id}-error`);
+    const errorMessageEl = this._formEl.querySelector(`#${inputEl.id}-error`);
     inputEl.classList.add(this._inputErrorClass);
-    this._errorMessageEl.textContent = inputEl.validationMessage;
-    this._errorMessageEl.classList.add(this._errorClass);
+    errorMessageEl.textContent = errorMessage;
+    errorMessageEl.classList.add(this._errorClass);
   }
 
   _hideInputError(inputEl) {
-    this._element = this._formEl.querySelector(`#${inputEl.id}-error`);
+    const errorMessageEl = this._formEl.querySelector(`#${inputEl.id}-error`);
     inputEl.classList.remove(this._inputErrorClass);
     errorMessageEl.classList.remove(this._errorClass);
     errorMessageEl.textContent = "";
@@ -26,7 +23,7 @@ export default class FormValidator {
 
   _checkInputValidity(inputEl) {
     if (!inputEl.validity.valid) {
-      this._showInputError(inputEl);
+      this._showInputError(inputEl, inputEl.validationMessage);
     } else {
       this._hideInputError(inputEl);
     }
@@ -47,9 +44,14 @@ export default class FormValidator {
       this._submitButton.disabled = false;
     }
   }
+  disableButton() {
+    const button = this._formEl.querySelector(this._submitButtonSelector);
+    this._submitButtonSelector.disabled = true;
+    button.classList.add(this._inactiveButtonClass);
+  }
 
   _setEventListeners() {
-    this._inputList = Array.from(
+    this._inputEls = Array.from(
       this._formEl.querySelectorAll(this._inputSelector)
     );
     this._inputEls.forEach((inputEl) => {
