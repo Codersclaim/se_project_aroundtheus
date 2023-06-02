@@ -23,12 +23,12 @@ this._cardDeleteButton();
   })
 
 _imagePopup() {
-  const imagePopup = document.querySelector("#modal-preview-image");
-  const cardImageEl = imagePopup.querySelector("modal__container-image");
-  const cardTitleEl = imagePopup.querySelector("modal__container-image");
-  cardImageEl.src = "" ;
-  cardImageEl.alt = "" ;
-  cardTitleEl.textContent = "" ;
+   this._imagePopup = document.querySelector("#modal-preview-image");
+   this._cardImageEl = this._imagePopup.querySelector("modal__container-image");
+  this._cardTitleEl = this._imagePopup.querySelector("modal__container-image");
+  this._cardImageEl.src = this_link ;
+  this._cardImageEl.alt =  this._name;
+  this._cardTitleEl.textContent = this._name;
 }
 
 
