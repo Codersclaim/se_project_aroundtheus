@@ -145,13 +145,13 @@ function handleAddCardFormSubmit(e) {
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
   const cardInputList = Array.from(
-    addCardFormElement.querySelectorAll(config.inputSelector)
+    addCardFormElement.querySelectorAll(settings.inputSelector)
   );
   renderCard({ name, link }, cardListEl);
 
   closeModal(addCardModal);
   addCardFormElement.reset();
-  toggleButtonState(cardInputList, cardSubmitButton, config);
+  toggleButtonState(cardInputList, cardSubmitButton, settings);
 }
 
 // function openModal(modal) {
