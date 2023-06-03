@@ -3,12 +3,12 @@ export default class FormValidator {
     this._formEl = formEl;
     this._formSelector = settings.formSelector;
     this._inputSelector = settings.inputSelector;
-    this._submitButton = settings._submitButtonSelector;
+    this._submitButton = this._formEl.querySelector(this._submitButtonSelector);
     this._submitButtonSelector = settings._submitButtonSelector;
     this._inactiveButtonClass = settings._inactiveButtonClass;
     this._inputErrorClass = settings._inputErrorClass;
     this._errorClass = settings._errorClass;
-    this._formEl.querySelector(this._submitButtonSelector);
+    
     
   }
 
