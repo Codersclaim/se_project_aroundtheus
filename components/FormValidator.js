@@ -12,14 +12,16 @@ export default class FormValidator {
     this._errorClass = settings.errorClass;
   }
 
-  _showInputError(inputEl, errorMessage) {
+  _showInputError(inputEl) {
+    this._element = `#${inputEl.id}-error`;
     const errorMessageEl = this._formEl.querySelector(`#${inputEl.id}-error`);
     inputEl.classList.add(this._inputErrorClass);
-    errorMessageEl.textContent = errorMessage;
+    errorMessageEl.textContent =  this._inputEl.validationMessage;
     errorMessageEl.classList.add(this._errorClass);
   }
 
   _hideInputError(inputEl) {
+    this._element = `#${inputEl.id}-error`;
     const errorMessageEl = this._formEl.querySelector(`#${inputEl.id}-error`);
     inputEl.classList.remove(this._inputErrorClass);
     errorMessageEl.classList.remove(this._errorClass);
@@ -35,7 +37,7 @@ export default class FormValidator {
   }
 
   _hasInvalidInput() {
-    return !this._inputEls.some((inputEl) => {
+    return !this._inputEls.every((inputEl) => {
       return !inputEl.validity.valid;
     });
   }
