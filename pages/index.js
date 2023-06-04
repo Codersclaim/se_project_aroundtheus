@@ -64,8 +64,8 @@ const profileDescriptionInput = document.querySelector(
 const profileDescriptionName = document.querySelector(
   "#card-description-input"
 );
-const profileEditForm = profileModal.querySelector(".modal__form");
-const addCardFormElement = addCardModal.querySelector(".modal__form");
+const profileEditForm = profileModal.querySelector("#profile-form");
+const addCardFormElement = addCardModal.querySelector("#add-card-form"); 
 const cardListEl = document.querySelector(".cards__list");
 
 const cardTemplate =
@@ -82,7 +82,7 @@ const modalImage = modalImagePreview.querySelector(".modal__image");
 const modalCaption = modalImagePreview.querySelector(".modal__preview-caption");
 const previewExitButton = modalImagePreview.querySelector(".modal__close");
 
-const editFormValidator = new FormValidator(settings, profileEditForm);
+const editFormValidator = new FormValidator(settings, profileEditForm );
 editFormValidator.enableValidation();
 const addFormValidator = new FormValidator(settings, addCardFormElement);
 addFormValidator.enableValidation();
@@ -201,3 +201,4 @@ function closeModalOnRemoteClick(evt) {
 modalImagePreview.addEventListener("mousedown", closeModalOnRemoteClick);
 profileModal.addEventListener("mousedown", closeModalOnRemoteClick);
 addCardModal.addEventListener("mousedown", closeModalOnRemoteClick);
+
