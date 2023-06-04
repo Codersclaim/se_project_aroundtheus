@@ -150,7 +150,7 @@ function handleAddCardFormSubmit(e) {
 
   closeModal(addCardModal);
   addCardFormElement.reset();
-  toggleButtonState(cardInputList, cardSubmitButton, settings);
+  //  toggleButtonState(cardInputList, cardSubmitButton, settings);
 }
 
 // function openModal(modal) {
