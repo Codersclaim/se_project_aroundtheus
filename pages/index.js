@@ -175,12 +175,12 @@ const addFormValidator = new FormValidator(settings, addCardFormElement);
 addFormValidator.enableValidation();
 
 profileEditForm.addEventListener("click", () => {
-  
+  modalTitleName.reset();
   editFormValidator.resetValidation();
 });
 
 addCardFormElement.addEventListener("click", () => {
-  
+  profileDescriptionName.reset();
   addFormValidator.resetValidation();
 });
 
