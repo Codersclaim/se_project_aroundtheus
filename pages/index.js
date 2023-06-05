@@ -174,24 +174,25 @@ editFormValidator.enableValidation();
 const addFormValidator = new FormValidator(settings, addCardFormElement);
 addFormValidator.enableValidation();
 
-profileEditForm.addEventListener("click", () => {
-  modalTitleName.reset();
-  editFormValidator.resetValidation();
-});
+// profileEditForm.addEventListener("click", () => {
+//   modalTitleName.reset();
+//   editFormValidator.resetValidation();
+// });
 
-addCardFormElement.addEventListener("click", () => {
-  profileDescriptionName.reset();
-  addFormValidator.resetValidation();
-});
+// addCardFormElement.addEventListener("click", () => {
+//   profileDescriptionName.reset();
+//   addFormValidator.resetValidation();
+// });
 
 
 
 // add new card
 
 addNewCardButton.addEventListener("click", () => openModal(addCardModal));
-addCardModalCloseButton.addEventListener("click", () =>
-  closeModal(addCardModal)
-);
+addCardModalCloseButton.addEventListener("click", () => {
+  closeModal(addCardModal);
+  addFormValidator.resetValidation();
+});
 
 
 
@@ -200,12 +201,14 @@ profileButtonEdit.addEventListener("click", () => {
   profileDescriptionInput.value = profileDescription.textContent;
 
   openModal(profileModal);
+  editFormValidator.resetValidation();
 });
 
 function closePopupWithEscapeKeydown(evt) {
   if (evt.key === "Escape") {
     const openedModal = document.querySelector(".modal_opened");
     closeModal(openedModal);
+    
   }
 }
 
