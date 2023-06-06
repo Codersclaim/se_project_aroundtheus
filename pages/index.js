@@ -185,11 +185,24 @@ addFormValidator.enableValidation();
 
 // add new card
 
-addNewCardButton.addEventListener("click", () => openModal(addCardModal));
-addCardModalCloseButton.addEventListener("click", () => {
-  closeModal(addCardModal);
+// addNewCardButton.addEventListener("click", () => openModal(addCardModal));
+// addCardModalCloseButton.addEventListener("click", () => {
+//   closeModal(addCardModal);
+//   addFormValidator.resetValidation();
+// });
+
+
+addNewCardButton.addEventListener("click", () => {
   addFormValidator.resetValidation();
+  openModal(addCardModal)
+  
 });
+addCardModalCloseButton.addEventListener("click", () => {
+     
+     addFormValidator.resetValidation();
+     closeModal(addCardModal);
+});
+
 
 profileButtonEdit.addEventListener("click", () => {
   profileTitleName.value = profileTitle.textContent;
