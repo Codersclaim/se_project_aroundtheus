@@ -39,7 +39,7 @@ const settings = {
   submitButtonSelector: ".modal__button",
   inactiveButtonClass: "modal__button_disabled",
   inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible"
+  errorClass: "modal__error_visible",
 };
 
 // Elements
@@ -65,7 +65,7 @@ const profileDescriptionName = document.querySelector(
   "#card-description-input"
 );
 const profileEditForm = profileModal.querySelector("#profile-form");
-const addCardFormElement = addCardModal.querySelector("#add-card-form"); 
+const addCardFormElement = addCardModal.querySelector("#add-card-form");
 const cardListEl = document.querySelector(".cards__list");
 
 const cardTemplate =
@@ -81,7 +81,6 @@ const modalImagePreview = document.querySelector("#modal-preview-image");
 const modalImage = modalImagePreview.querySelector(".modal__image");
 const modalCaption = modalImagePreview.querySelector(".modal__preview-caption");
 const previewExitButton = modalImagePreview.querySelector(".modal__close");
-const modal = document.querySelector(".modal_opened");
 
 // Functions
 
@@ -126,7 +125,7 @@ function renderCard(cardData, listEl) {
 
 const imagePopup = document.querySelector("#modal-preview-image");
 // imagePopup.open(data);
-// 
+//
 // Event handlers
 function handleProfileEditSubmit(e) {
   e.preventDefault();
@@ -146,7 +145,7 @@ function handleAddCardFormSubmit(e) {
 
   closeModal(addCardModal);
   addCardFormElement.reset();
-   addFormValidator.toggleButtonState(cardInputList, cardSubmitButton, settings);
+  addFormValidator.toggleButtonState(cardInputList, cardSubmitButton, settings);
 }
 
 // function openModal(modal) {
@@ -169,7 +168,7 @@ previewExitButton.addEventListener("click", () => {
 
 // Validators
 
-const editFormValidator = new FormValidator(settings, profileEditForm );
+const editFormValidator = new FormValidator(settings, profileEditForm);
 editFormValidator.enableValidation();
 const addFormValidator = new FormValidator(settings, addCardFormElement);
 addFormValidator.enableValidation();
@@ -184,8 +183,6 @@ addFormValidator.enableValidation();
 //   addFormValidator.resetValidation();
 // });
 
-
-
 // add new card
 
 addNewCardButton.addEventListener("click", () => openModal(addCardModal));
@@ -193,8 +190,6 @@ addCardModalCloseButton.addEventListener("click", () => {
   closeModal(addCardModal);
   addFormValidator.resetValidation();
 });
-
-
 
 profileButtonEdit.addEventListener("click", () => {
   profileTitleName.value = profileTitle.textContent;
@@ -208,26 +203,17 @@ function closePopupWithEscapeKeydown(evt) {
   if (evt.key === "Escape") {
     const openedModal = document.querySelector(".modal_opened");
     closeModal(openedModal);
-    
   }
-  
 }
-
 
 function closeModalOnRemoteClick(evt) {
   if (evt.target === evt.currentTarget) {
     closeModal(evt.target);
+    addFormValidator.resetValidation();
+    editFormValidator.resetValidation();
   }
 }
-
-modal.addEventListener("click", () => 
-{closeModalOnRemoteClick});
-// addFormValidator.resetValidation();
-//   editFormValidator.resetValidation();
-
-
 
 modalImagePreview.addEventListener("mousedown", closeModalOnRemoteClick);
 profileModal.addEventListener("mousedown", closeModalOnRemoteClick);
 addCardModal.addEventListener("mousedown", closeModalOnRemoteClick);
-
