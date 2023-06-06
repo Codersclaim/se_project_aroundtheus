@@ -145,7 +145,7 @@ function handleAddCardFormSubmit(e) {
 
   closeModal(addCardModal);
   addCardFormElement.reset();
-  addFormValidator.toggleButtonState(cardInputList, cardSubmitButton, settings);
+  addFormValidator.toggleButtonState();
 }
 
 // function openModal(modal) {
@@ -196,7 +196,7 @@ profileButtonEdit.addEventListener("click", () => {
   profileDescriptionInput.value = profileDescription.textContent;
 
   openModal(profileModal);
-  addFormValidator.resetValidation();
+  editFormValidator.resetValidation();
 });
 
 function closePopupWithEscapeKeydown(evt) {
@@ -209,7 +209,7 @@ function closePopupWithEscapeKeydown(evt) {
 function closeModalOnRemoteClick(evt) {
   if (evt.target === evt.currentTarget) {
     closeModal(evt.target);
-    addFormValidator.resetValidation();
+   
     editFormValidator.resetValidation();
   }
 }

@@ -16,24 +16,23 @@ export default class Card {
     this._cardElement
       .querySelector(".card__button")
       .addEventListener("click", () => {
-        this._likeButton();
+        this._toggleLike();
       });
 
     this._cardElement
       .querySelector(".card__delete-button")
       .addEventListener("click", () => {
-        this._cardDeleteButton();
+        this._deleteCard();
       });
-    this._cardElement
-      .querySelector(".card__image")
-      .addEventListener("click", () => {
-        this._imagePopup();
-      });
-  }
-  //   this._cardImageEl.addEventListener("click", () => {
-  //     this._imagePopup();
-  //   });
+  //   this._cardElement.querySelector(".card__image")
+  //     .addEventListener("click", () => {
+  //       this._imagePopup();
+  //     });
   // }
+    this._cardImageEl.addEventListener("click", () => {
+      this._imagePopup();
+    });
+  }
 
   _imagePopup() {
     const imagePopup = document.querySelector("#modal-preview-image");
@@ -48,12 +47,12 @@ export default class Card {
     openModal(imagePopup);
   }
 
-  _cardDeleteButton() {
+  _deleteCard() {
     this._cardElement.remove();
     this._cardElement = null;
   }
 
-  _likeButton() {
+  _toggleLike() {
     this._cardElement
       .querySelector(".card__button")
       .classList.toggle("card__like-button_active");
