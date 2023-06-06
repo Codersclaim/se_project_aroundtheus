@@ -81,7 +81,7 @@ const modalImagePreview = document.querySelector("#modal-preview-image");
 const modalImage = modalImagePreview.querySelector(".modal__image");
 const modalCaption = modalImagePreview.querySelector(".modal__preview-caption");
 const previewExitButton = modalImagePreview.querySelector(".modal__close");
-
+const modal = document.querySelector(".modal__opened");
 
 // Functions
 
@@ -201,7 +201,7 @@ profileButtonEdit.addEventListener("click", () => {
   profileDescriptionInput.value = profileDescription.textContent;
 
   openModal(profileModal);
-  editFormValidator.resetValidation();
+  addFormValidator.resetValidation();
 });
 
 function closePopupWithEscapeKeydown(evt) {
@@ -210,7 +210,17 @@ function closePopupWithEscapeKeydown(evt) {
     closeModal(openedModal);
     
   }
+  
 }
+
+modal.addEventListener("click", () => {openModal(addCardModal)
+
+  
+closeModal(openedModal);
+addFormValidator.resetValidation();
+  editFormValidator.resetValidation();
+});
+
 
 function closeModalOnRemoteClick(evt) {
   if (evt.target === evt.currentTarget) {
