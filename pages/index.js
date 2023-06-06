@@ -81,7 +81,7 @@ const modalImagePreview = document.querySelector("#modal-preview-image");
 const modalImage = modalImagePreview.querySelector(".modal__image");
 const modalCaption = modalImagePreview.querySelector(".modal__preview-caption");
 const previewExitButton = modalImagePreview.querySelector(".modal__close");
-const modal = document.querySelector(".modal__opened");
+const modal = document.querySelector(".modal_opened");
 
 // Functions
 
@@ -213,20 +213,19 @@ function closePopupWithEscapeKeydown(evt) {
   
 }
 
-modal.addEventListener("click", () => {openModal(addCardModal)
-
-  
-closeModal(openedModal);
-addFormValidator.resetValidation();
-  editFormValidator.resetValidation();
-});
-
 
 function closeModalOnRemoteClick(evt) {
   if (evt.target === evt.currentTarget) {
     closeModal(evt.target);
   }
 }
+
+modal.addEventListener("click", () => 
+{closeModalOnRemoteClick});
+// addFormValidator.resetValidation();
+//   editFormValidator.resetValidation();
+
+
 
 modalImagePreview.addEventListener("mousedown", closeModalOnRemoteClick);
 profileModal.addEventListener("mousedown", closeModalOnRemoteClick);
