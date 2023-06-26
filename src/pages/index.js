@@ -92,6 +92,7 @@ const settings = {
 // Functions
 
 
+
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageEl = cardElement.querySelector(".card__image");
@@ -233,7 +234,7 @@ PopupImage.open();
 
 
 
-const imagePopup = document.querySelector("#modal-preview-image");
+// const imagePopup = document.querySelector("#modal-preview-image");
 // imagePopup.open(data);
 //
 //Section
