@@ -192,12 +192,7 @@ profileButtonEdit.addEventListener("click", () => {
   editFormValidator.resetValidation();
 });
 
-function closePopupWithEscapeKeydown(evt) {
-  if (evt.key === "Escape") {
-    const openedModal = document.querySelector(".modal_opened");
-    closeModal(openedModal);
-  }
-}
+
 
 function closeModalOnRemoteClick(evt) {
   if (evt.target === evt.currentTarget) {
