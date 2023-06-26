@@ -146,9 +146,9 @@ editPopup.setEventListeners();
 const PopupImage = new PopupWithImage("#modal-preview-image", openModal);
 PopupImage.setEventListeners();
 
-function openModal() {
+// function openModal() {
 PopupImage.open();
-}
+// }
 
 
 
