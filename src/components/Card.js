@@ -31,10 +31,10 @@ export default class Card {
   //     });
   // }
     this._cardImageEl.addEventListener("click", () => {
-     this._handleCardClick(this._cardImageEl);
-      // this._imagePopup();
+      PopupImage.open(this._cardImageEl);
+      // PopupImage.open();
     });
-
+    // this._handleCardClick
   }
 
   _imagePopup() {
