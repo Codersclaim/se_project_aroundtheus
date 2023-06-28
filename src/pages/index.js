@@ -198,7 +198,7 @@ profileButtonEdit.addEventListener("click", () => {
 function closeModalOnRemoteClick(evt) {
   if (evt.target === evt.currentTarget) {
     closeModal(evt.target);
-
+  
     editFormValidator.resetValidation();
   }
 }
