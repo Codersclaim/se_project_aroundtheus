@@ -1,6 +1,6 @@
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
-import { openModal, closeModal } from "../utils/utils.js";
+// import { openModal, closeModal } from "../utils/utils.js";
 import '../pages/index.css';
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
@@ -88,8 +88,13 @@ const settings = {
   errorClass: "modal__error_visible",
 };
  
+// PopupWithImage
+      
+const popupImage = new PopupWithImage("#modal-preview-image", handlePreviewImage);
+popupImage.setEventListeners();
 
 // Functions
+
 
 
 
@@ -122,8 +127,13 @@ function getCardElement(cardData) {
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
 
 function renderCard(cardData, listEl) {
-  const card = new Card(cardData, "#card-template", openModal);
+  const card = new Card(cardData, "#card-template", handlePreviewImage);
   listEl.prepend(card.getCard());
+}
+
+function handlePreviewImage({name, link}) {
+
+popupImage.open({name, link});
 }
 
 
@@ -218,13 +228,9 @@ editPopup.close();
 
 editPopup.setEventListeners();
 
-// PopupWithImage
-      
-const PopupImage = new PopupWithImage("#modal-preview-image", openModal);
-PopupImage.setEventListeners();
 
 // function openModal() {
-PopupImage.open();
+// popupImage.open();
 // }
 
 

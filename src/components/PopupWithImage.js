@@ -12,9 +12,9 @@ open(data) {
   const previewPopupElement = this._popupElement.querySelector(".modal__image");
   const previewPopupCaption = this._popupElement.querySelector(".modal__preview-caption");
 
-  previewPopupElement.src = data.src;
-  previewPopupElement.alt = data.alt;
-  previewPopupCaption.textContent = data.alt;
+  previewPopupElement.src = data.link;
+  previewPopupElement.alt = data.name;
+  previewPopupCaption.textContent = data.name;
 
   super.open();
 }

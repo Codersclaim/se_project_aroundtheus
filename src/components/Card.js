@@ -1,4 +1,3 @@
-import { openModal, closeModal } from "../utils/utils.js";
 
 export default class Card {
   constructor({ name, link }, cardSelector, handleCardClick) {
@@ -31,8 +30,9 @@ export default class Card {
   //     });
   // }
     this._cardImageEl.addEventListener("click", () => {
-      PopupImage.open(this._cardImageEl);
-      // PopupImage.open();
+      this._handleCardClick({name: this._name, link: this._link});
+      // popupImage.open(this._cardImageEl);
+      // popupImage.open();
     });
     // this._handleCardClick
   }
