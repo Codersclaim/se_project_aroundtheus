@@ -96,32 +96,6 @@ popupImage.setEventListeners();
 
 // Functions
 
-// function getCardElement(cardData) {
-//   const cardElement = cardTemplate.cloneNode(true);
-//   const cardImageEl = cardElement.querySelector(".card__image");
-//   const cardTitleEl = cardElement.querySelector(".card__title");
-//   cardImageEl.src = cardData.link;
-//   cardImageEl.alt = "Photo of" + cardTitleEl.textContent;
-//   cardTitleEl.textContent = cardData.name;
-//   const likeButton = cardElement.querySelector(".card__button");
-//   likeButton.addEventListener("click", () => {
-//     likeButton.classList.toggle("card__like-button_active");
-//   });
-
-//   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
-//   cardDeleteButton.addEventListener("click", () => {
-//     cardElement.remove();
-//   });
-//   cardImageEl.addEventListener("click", () => {
-//     openModal(modalImagePreview);
-//     modalImage.src = cardImageEl.src;
-//     modalImage.alt = cardImageEl.alt;
-//     modalCaption.textContent = cardTitleEl.textContent;
-//   });
-
-//   return cardElement;
-// }
-
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
 
 function renderCard(cardData, cardListEl) {
@@ -146,14 +120,14 @@ function handleProfileEditSubmit(e) {
 }
 
 function handleAddCardFormSubmit(inputValues) {
-  
-  const name = cardTitleInput.value;
-  const link = cardUrlInput.value;
+  const name = inputValues.title;
+  const link = inputValues.url;
   // const cardInputEl = Array.from(
   //   addCardFormElement.querySelectorAll(settings.inputSelector)
   // );
-  renderCard({ name, link }, cardListEl, inputValues);
 
+  const newCard = renderCard({ name, link });
+  cardSection.addItem(newCard);
   newCardPopup.close();
   addCardFormElement.reset();
   addFormValidator.toggleButtonState();
@@ -162,9 +136,6 @@ function handleAddCardFormSubmit(inputValues) {
 // Event listeners
 
 profileModalCloseButton.addEventListener("click", () => editPopup.close());
-
-profileEditForm.addEventListener("submit", handleProfileEditSubmit);
-addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
 previewExitButton.addEventListener("click", () => {
   popupImage.close();
@@ -181,10 +152,6 @@ addFormValidator.enableValidation();
 addNewCardButton.addEventListener("click", () => {
   addFormValidator.resetValidation();
   newCardPopup.open();
-});
-addCardModalCloseButton.addEventListener("click", () => {
-  addFormValidator.resetValidation();
-  newCardPopup.close();
 });
 
 profileButtonEdit.addEventListener("click", () => {
@@ -208,7 +175,7 @@ const newCardPopup = new PopupWithForm(
   "#add-card-modal",
   handleAddCardFormSubmit
 );
-newCardPopup.close();
+
 newCardPopup.setEventListeners();
 
 const userInfo = new UserInfo({
