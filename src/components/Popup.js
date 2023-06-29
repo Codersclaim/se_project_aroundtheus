@@ -28,12 +28,15 @@ export default class Popup {
   _handleEscClose(evt) {
     // listens for esc button
     if (evt.key === "Escape") {
-      this._close();
+      this.close();
     }
   }
   setEventListeners() {
     // sets event listeners
     document.addEventListener("keydown", this._handleEscClose);
     this._popupElement.addEventListener("click", this._closeModalWithClick);
+    
   }
+
 }
+

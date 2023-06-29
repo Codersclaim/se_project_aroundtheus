@@ -109,7 +109,7 @@ function handlePreviewImage({ name, link }) {
 
 // Event handlers
 function handleProfileEditSubmit(e) {
-  e.preventDefault();
+  
   userInfo.setUserInfo({
     title: profileTitleName.value,
     job: profileDescriptionInput.value,
