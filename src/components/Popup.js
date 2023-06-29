@@ -19,7 +19,7 @@ export default class Popup {
   _closeModalWithClick = (evt) => {
     if (
       evt.target.classList.contains("modal__close") ||
-      evt.target.classList.contains("modal__close-button")
+      evt.target.classList.contains("modal")
     ) {
       this.close();
     }

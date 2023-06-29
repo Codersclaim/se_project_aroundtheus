@@ -10,7 +10,7 @@ this._popupForm = this._popupElement.querySelector('.modal__form');
 
 close() {
 this._popupForm.reset();
-this._popupElement.removeEventListener("submit", this._handleFormSubmit);
+this._popupElement.removeEventListener("submit", this._submitForm);
 super.close();
 }
 
@@ -31,7 +31,7 @@ return inputObject;
 
 _submitForm() {
   const inputValues = this._getInputValues();
-  this._handleFormSubmit(inputValues());
+  this._handleFormSubmit(inputValues);
 };
 
 

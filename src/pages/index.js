@@ -96,35 +96,35 @@ popupImage.setEventListeners();
 
 // Functions
 
-function getCardElement(cardData) {
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImageEl = cardElement.querySelector(".card__image");
-  const cardTitleEl = cardElement.querySelector(".card__title");
-  cardImageEl.src = cardData.link;
-  cardImageEl.alt = "Photo of" + cardTitleEl.textContent;
-  cardTitleEl.textContent = cardData.name;
-  const likeButton = cardElement.querySelector(".card__button");
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
-  });
+// function getCardElement(cardData) {
+//   const cardElement = cardTemplate.cloneNode(true);
+//   const cardImageEl = cardElement.querySelector(".card__image");
+//   const cardTitleEl = cardElement.querySelector(".card__title");
+//   cardImageEl.src = cardData.link;
+//   cardImageEl.alt = "Photo of" + cardTitleEl.textContent;
+//   cardTitleEl.textContent = cardData.name;
+//   const likeButton = cardElement.querySelector(".card__button");
+//   likeButton.addEventListener("click", () => {
+//     likeButton.classList.toggle("card__like-button_active");
+//   });
 
-  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
-  cardDeleteButton.addEventListener("click", () => {
-    cardElement.remove();
-  });
-  cardImageEl.addEventListener("click", () => {
-    openModal(modalImagePreview);
-    modalImage.src = cardImageEl.src;
-    modalImage.alt = cardImageEl.alt;
-    modalCaption.textContent = cardTitleEl.textContent;
-  });
+//   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
+//   cardDeleteButton.addEventListener("click", () => {
+//     cardElement.remove();
+//   });
+//   cardImageEl.addEventListener("click", () => {
+//     openModal(modalImagePreview);
+//     modalImage.src = cardImageEl.src;
+//     modalImage.alt = cardImageEl.alt;
+//     modalCaption.textContent = cardTitleEl.textContent;
+//   });
 
-  return cardElement;
-}
+//   return cardElement;
+// }
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
 
-function renderCard(cardData, listEl) {
+function renderCard(cardData, cardListEl) {
   const card = new Card(cardData, "#card-template", handlePreviewImage);
   return card.getCard();
 }
@@ -145,14 +145,14 @@ function handleProfileEditSubmit(e) {
   editPopup.close();
 }
 
-function handleAddCardFormSubmit(e) {
-  e.preventDefault();
+function handleAddCardFormSubmit(inputValues) {
+  
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
-  const cardInputList = Array.from(
-    addCardFormElement.querySelectorAll(settings.inputSelector)
-  );
-  renderCard({ name, link }, cardListEl);
+  // const cardInputEl = Array.from(
+  //   addCardFormElement.querySelectorAll(settings.inputSelector)
+  // );
+  renderCard({ name, link }, cardListEl, inputValues);
 
   newCardPopup.close();
   addCardFormElement.reset();
@@ -195,13 +195,13 @@ profileButtonEdit.addEventListener("click", () => {
   editFormValidator.resetValidation();
 });
 
-function closeModalOnRemoteClick(evt) {
-  if (evt.target === evt.currentTarget) {
-    closeModal(evt.target);
-  
-    editFormValidator.resetValidation();
-  }
-}
+// function closeModalOnRemoteClick(evt) {
+//   if (evt.target === evt.currentTarget) {
+//     closeModal(evt.target);
+
+//     editFormValidator.resetValidation();
+//   }
+// }
 // new card
 
 const newCardPopup = new PopupWithForm(
@@ -212,8 +212,8 @@ newCardPopup.close();
 newCardPopup.setEventListeners();
 
 const userInfo = new UserInfo({
-  userNameSelector: "profile__title",
-  userJobSelector: "profile__description",
+  userNameSelector: ".profile__title",
+  userJobSelector: ".profile__description",
 });
 //edit profile
 
@@ -250,6 +250,6 @@ cardSection.renderItems();
 
 // userInfo
 
-modalImagePreview.addEventListener("mousedown", closeModalOnRemoteClick);
-profileModal.addEventListener("mousedown", closeModalOnRemoteClick);
-addCardModal.addEventListener("mousedown", closeModalOnRemoteClick);
+// modalImagePreview.addEventListener("mousedown", closeModalOnRemoteClick);
+// profileModal.addEventListener("mousedown", closeModalOnRemoteClick);
+// addCardModal.addEventListener("mousedown", closeModalOnRemoteClick);
