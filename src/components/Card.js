@@ -37,18 +37,18 @@ export default class Card {
     // this._handleCardClick
   }
 
-  _imagePopup() {
-    const imagePopup = document.querySelector("#modal-preview-image");
-    this._cardImageEl = imagePopup.querySelector(".modal__image");
-    this._cardTitleEl = imagePopup.querySelector(
-      ".modal__preview-caption"
-    );
-    this._cardImageEl.src = this._link;
-    this._cardImageEl.alt = this._name;
-    this._cardTitleEl.textContent = this._name;
+  // _imagePopup() {
+  //   const imagePopup = document.querySelector("#modal-preview-image");
+  //   this._cardImageEl = imagePopup.querySelector(".modal__image");
+  //   this._cardTitleEl = imagePopup.querySelector(
+  //     ".modal__preview-caption"
+  //   );
+  //   this._cardImageEl.src = this._link;
+  //   this._cardImageEl.alt = this._name;
+  //   this._cardTitleEl.textContent = this._name;
 
-    openModal(imagePopup);
-  }
+  //   openModal(imagePopup);
+  // }
 
   _deleteCard() {
     this._cardElement.remove();
@@ -62,10 +62,10 @@ export default class Card {
   }
 
   getCard() {
-    this._cardElement = document
-      .querySelector(this._cardSelector)
-      .content.querySelector(".card")
-      .cloneNode(true);
+    // this._cardElement = document
+    //   .querySelector(this._cardSelector)
+    //   .content.querySelector(".card")
+    //   .cloneNode(true);
     this._cardElement = this._getTemplate();
     this._cardTitleEl = this._cardElement.querySelector(".card__title");
     this._cardImageEl = this._cardElement.querySelector(".card__image");

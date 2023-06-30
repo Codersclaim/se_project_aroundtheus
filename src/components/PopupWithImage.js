@@ -2,20 +2,21 @@ import Popup from "./Popup";
 
 export default class PopupWithImage extends Popup {
   constructor(popupSelector) {
-super(popupSelector);
-this._previewImageElement = this._popupElement.querySelector(".modal__image");
-this._previewImageCaption = this._popupElement.querySelector(".modal__preview-caption");
+    super(popupSelector);
+    
   }
 
+  open(data) {
+    const previewPopupElement =
+      this._popupElement.querySelector(".modal__image");
+    const previewPopupCaption = this._popupElement.querySelector(
+      ".modal__preview-caption"
+    );
 
-open(data) {
-  const previewPopupElement = this._popupElement.querySelector(".modal__image");
-  const previewPopupCaption = this._popupElement.querySelector(".modal__preview-caption");
+    previewPopupElement.src = data.link;
+    previewPopupElement.alt = data.name;
+    previewPopupCaption.textContent = data.name;
 
-  previewPopupElement.src = data.link;
-  previewPopupElement.alt = data.name;
-  previewPopupCaption.textContent = data.name;
-
-  super.open();
-}
+    super.open();
+  }
 }

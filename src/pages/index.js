@@ -96,7 +96,7 @@ popupImage.setEventListeners();
 
 // Functions
 
-initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
+// initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
 
 function renderCard(cardData, cardListEl) {
   const card = new Card(cardData, "#card-template", handlePreviewImage);
@@ -108,16 +108,13 @@ function handlePreviewImage({ name, link }) {
 }
 
 // Event handlers
-function handleProfileEditSubmit(e) {
-  
-  userInfo.setUserInfo({
-    title: profileTitleName.value,
-    job: profileDescriptionInput.value,
-  });
-  // profileTitle.textContent = profileTitleName.value;
+// function handleProfileEditSubmit(inputValues) {
+  const editPopup = new PopupWithForm("#profile-edit-modal", (inputValues) => { 
+  userInfo.setUserInfo(inputValues);
+  profileTitle.textContent = profileTitleName.value;
   // profileDescription.textContent = profileDescriptionInput.value;
   editPopup.close();
-}
+});
 
 function handleAddCardFormSubmit(inputValues) {
   const name = inputValues.title;
@@ -129,17 +126,17 @@ function handleAddCardFormSubmit(inputValues) {
   const newCard = renderCard({ name, link });
   cardSection.addItem(newCard);
   newCardPopup.close();
-  addCardFormElement.reset();
+  // addCardFormElement.reset();
   addFormValidator.toggleButtonState();
 }
 
 // Event listeners
 
-profileModalCloseButton.addEventListener("click", () => editPopup.close());
+// profileModalCloseButton.addEventListener("click", () => editPopup.close());
 
-previewExitButton.addEventListener("click", () => {
-  popupImage.close();
-});
+// previewExitButton.addEventListener("click", () => {
+//   popupImage.close();
+// });
 
 // Validators
 
@@ -155,6 +152,9 @@ addNewCardButton.addEventListener("click", () => {
 });
 
 profileButtonEdit.addEventListener("click", () => {
+  // profileTitleName.value = profileTitle.textContent;
+  // profileDescriptionInput.value = profileDescription.textContent;
+  const userData = userInfo.getUserInfo()
   profileTitleName.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
 
@@ -184,12 +184,12 @@ const userInfo = new UserInfo({
 });
 //edit profile
 
-const editPopup = new PopupWithForm(
-  "#profile-edit-modal",
-  handleProfileEditSubmit
-);
+// const editPopup = new PopupWithForm(
+//   "#profile-edit-modal",
+//   handleProfileEditSubmit
+// );
 
-editPopup.close();
+// editPopup.close();
 
 editPopup.setEventListeners();
 
