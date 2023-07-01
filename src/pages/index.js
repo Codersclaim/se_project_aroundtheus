@@ -5,7 +5,9 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import Section from "../components/Section.js";
 import UserInfo from "../components/UserInfo.js";
-import {initialCards,profileButtonEdit,
+import {
+  initialCards,
+  profileButtonEdit,
   addCardModal,
   addNewCardButton,
   profileModal,
@@ -28,9 +30,10 @@ import {initialCards,profileButtonEdit,
   modalImage,
   modalCaption,
   previewExitButton,
-  settings } from "../utils/constants.js";
+  settings,
+} from "../utils/constants.js";
 
-  // PopupWithImage
+// PopupWithImage
 
 const popupImage = new PopupWithImage(
   "#modal-preview-image",
@@ -39,7 +42,6 @@ const popupImage = new PopupWithImage(
 popupImage.setEventListeners();
 
 // Functions
-
 
 function renderCard(cardData, cardListEl) {
   const card = new Card(cardData, "#card-template", handlePreviewImage);
@@ -52,10 +54,10 @@ function handlePreviewImage({ name, link }) {
 
 // Event handlers
 
-  const editPopup = new PopupWithForm("#profile-edit-modal", (inputValues) => { 
+const editPopup = new PopupWithForm("#profile-edit-modal", (inputValues) => {
   userInfo.setUserInfo(inputValues);
   profileTitle.textContent = profileTitleName.value;
-  
+
   editPopup.close();
 });
 
@@ -66,12 +68,9 @@ function handleAddCardFormSubmit(inputValues) {
   const newCard = renderCard({ name, link });
   cardSection.addItem(newCard);
   newCardPopup.close();
-  
+
   addFormValidator.toggleButtonState();
 }
-
-
-
 
 // Validators
 
@@ -87,15 +86,13 @@ addNewCardButton.addEventListener("click", () => {
 });
 
 profileButtonEdit.addEventListener("click", () => {
- 
-  const userData = userInfo.getUserInfo()
+  const userData = userInfo.getUserInfo();
   profileTitleName.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
 
   editPopup.open();
   editFormValidator.resetValidation();
 });
-
 
 // new card
 
@@ -114,7 +111,6 @@ const userInfo = new UserInfo({
 
 editPopup.setEventListeners();
 
-
 //Section
 
 const cardSection = new Section(
@@ -129,5 +125,3 @@ const cardSection = new Section(
 );
 
 cardSection.renderItems();
-
-
