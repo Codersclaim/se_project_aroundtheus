@@ -7,7 +7,7 @@ export default class UserInfo {
   getUserInfo() {
     return {
       username: this._userNameElement.textContent,
-      userJobDescription: this._userJobElement.textContent,
+      userJobDescription: this._userJobElement.textContent
     };
   }
 

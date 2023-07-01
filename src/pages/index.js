@@ -87,9 +87,10 @@ addNewCardButton.addEventListener("click", () => {
 
 profileButtonEdit.addEventListener("click", () => {
   const userData = userInfo.getUserInfo();
-  profileTitleName.value = profileTitle.textContent;
-  profileDescriptionInput.value = profileDescription.textContent;
-
+  
+  profileTitleName.value = userData.username;
+  profileDescriptionInput.value = userData.userJobDescription;
+  
   editPopup.open();
   editFormValidator.resetValidation();
 });
