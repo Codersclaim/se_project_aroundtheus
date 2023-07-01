@@ -56,7 +56,7 @@ function handlePreviewImage({ name, link }) {
 
 const editPopup = new PopupWithForm("#profile-edit-modal", (inputValues) => {
   userInfo.setUserInfo(inputValues);
-  profileTitle.textContent = profileTitleName.value;
+  // profileTitle.textContent = profileTitleName.value;
 
   editPopup.close();
 });
