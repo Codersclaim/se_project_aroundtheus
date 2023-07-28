@@ -28,7 +28,7 @@ This project includes the 4-8 projects from TripleTen. All the elements are disp
 * Validating "Edit Profile"/"New Place" Form
 * Updating the file structure
 * Classes
-
+* Refactoring
 
 * Example for the file structure:
 se_project_aroundtheus/
