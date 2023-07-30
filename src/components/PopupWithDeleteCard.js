@@ -14,6 +14,7 @@ this._deleteCardButton = this._popupElement.querySelector(".modal__delete-card-b
 
 _handleSubmit() {
 this._handleFormSubmit();
+
 }
 
 
