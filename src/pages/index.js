@@ -77,9 +77,9 @@ const popupImage = new PopupWithImage(
 popupImage.setEventListeners();
 
 // Functions
-
+// Render
 function renderCard(cardData, cardListEl) {
-  const card = new Card(cardData, "#card-template", handlePreviewImage);
+  const card = new Card(cardData, "#card-template", handlePreviewImage, handleDeleteClick);
   return card.getCard();
 }
 
@@ -185,11 +185,11 @@ editPopup.setEventListeners();
 
 const cardDeleteVerify = new PopupWithDeleteCard("#card-delete-modal", handleDeleteClick)
 
-function handleDeleteClick() {
+function handleDeleteClick(cardId) {
   cardDeleteVerify.setSubmitAction(() => {
     cardDeleteVerify.renderloading();
     api
-    .deleteCardInformation()
+    .deleteCardInformation(cardId)
     .then((res) => {
 element.remove(res._id);
     })
