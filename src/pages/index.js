@@ -112,16 +112,16 @@ const editPopup = new PopupWithForm("#profile-edit-modal", handleProfileSubmit);
 
 editPopup.close();
 
-function handleAddCardFormSubmit(inputValues) {
-  const name = inputValues.title;
-  const link = inputValues.url;
+// function handleAddCardFormSubmit(inputValues) {
+//   const name = inputValues.title;
+//   const link = inputValues.url;
 
-  const newCard = renderCard({ name, link });
-  cardSection.addItem(newCard);
-  newCardPopup.close();
+//   const newCard = renderCard({ name, link });
+//   cardSection.addItem(newCard);
+//   newCardPopup.close();
 
-  addFormValidator.toggleButtonState();
-}
+//   addFormValidator.toggleButtonState();
+// }
 
 // Validators
 
@@ -183,13 +183,13 @@ editPopup.setEventListeners();
 
 // Delete Verify
 
-const cardDeleteVerify = new PopupWithDeleteCard("#card-delete-modal", handleCardDelete)
+const cardDeleteVerify = new PopupWithDeleteCard("#card-delete-modal", handleDeleteClick)
 
-function handleCardDelete() {
+function handleDeleteClick() {
   cardDeleteVerify.setSubmitAction(() => {
     cardDeleteVerify.renderloading();
     api
-    .deleteCardInformation(data._id)
+    .deleteCardInformation()
     .then((res) => {
 element.remove(res._id);
     })
@@ -203,7 +203,7 @@ console.error(err);
       cardDeleteVerify.renderloading(false);
     });
   });
-  cardDeleteVerify.open(data._id);
+  cardDeleteVerify.open();
 }
 
 

@@ -9,7 +9,7 @@ export default class Card {
     this._userID = userID;
     this._id = _id;
     
-
+    
   }
 
   _getTemplate() {
@@ -28,7 +28,8 @@ export default class Card {
       .querySelector(".card__delete-button")
       .addEventListener("click", (evt) => {
         evt.preventDefault();
-        this._deleteCard();
+        this._deleteCard(this._handleDeleteClick);
+        // this._handleDeleteClick();
       });
   //   this._cardElement.querySelector(".card__image")
   //     .addEventListener("click", () => {
