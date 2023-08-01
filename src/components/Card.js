@@ -7,7 +7,7 @@ export default class Card {
     this._handleCardClick = handleCardClick;
     this._handleDeleteClick = handleDeleteClick;
     this._userID = userID;
-    this._id = _id;
+    this._cardData._id = cardData._id;
   }
     
   
@@ -29,7 +29,7 @@ export default class Card {
       .addEventListener("click", (evt) => {
         evt.preventDefault();
         // this._deleteCard(this._handleDeleteClick);
-        this._handleDeleteClick(this._id);
+        this._handleDeleteClick(this._cardData._id);
       });
   //   this._cardElement.querySelector(".card__image")
   //     .addEventListener("click", () => {
