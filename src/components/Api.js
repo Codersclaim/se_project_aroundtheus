@@ -31,7 +31,7 @@ export default class Api {
         console.log("Done with initial cards");
       });
   }
-
+// User Profile
   editProfileInformation({ name, about }) {
     return this._request(`${this._baseUrl}/users/me`, {
       method: "PATCH",
@@ -65,6 +65,7 @@ export default class Api {
         console.log("Done adding New Card Information from Server");
       });
   }
+  
 deleteCardInformation(cardId) {
 return this._request(`${this.baseUrl}/cards/${cardId}`, {
   method: "DELETE",

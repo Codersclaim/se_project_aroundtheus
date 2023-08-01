@@ -24,11 +24,12 @@
   position: relative;
   background-color: #fff;
   padding-bottom: 30px;
-
+/* padding: 36px 36px 36px 36px; */
   border-radius: 10px;
   margin: auto;
   width: 430px;
   height: 330px;
+
   box-shadow: 0, 0, 25px;
 }
 
@@ -176,6 +177,27 @@ color: #FF0000;
 /* height: 50px;
 width: 100%; */
 margin-top: 0;
+border-radius: 2px;
+}
+
+.modal__container-delete{
+  background-color: #fff;
+  width: 430px;
+  height: 181px;
+  position: relative;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.modal__heading-delete {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  max-width: 330px;
+  height: 23px;
+  color: #000;
+  margin: 34px 64px 40px 0px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 757px) {

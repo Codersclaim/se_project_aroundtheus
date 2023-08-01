@@ -45,11 +45,11 @@ const api = new Api({
   },
 });
 let cardSection;
-let userID;
+let userId;
 // Setting User Information
 Promise.all([api.getUserInformation(), api.getInitialCards()])
   .then(([userData, cardData]) => {
-    userID = userData._id;
+    userId = userData._id;
     userInfo.setUserInfo(userData);
     cardSection = new Section(
       {
@@ -79,7 +79,7 @@ popupImage.setEventListeners();
 // Functions
 // Render
 function renderCard(cardData, cardListEl) {
-  const card = new Card(cardData, "#card-template", handlePreviewImage, handleDeleteClick);
+  const card = new Card(cardData, "#card-template", handlePreviewImage, handleDeleteClick, userId);
   return card.getCard();
 }
 
@@ -185,11 +185,12 @@ editPopup.setEventListeners();
 
 const cardDeleteVerify = new PopupWithDeleteCard("#card-delete-modal", handleDeleteClick)
 
-function handleDeleteClick(cardData) {
+function handleDeleteClick(cardId) {
+  console.log(cardId);
   cardDeleteVerify.setSubmitAction(() => {
     cardDeleteVerify.renderloading();
     api
-    .deleteCardInformation(cardData)
+    .deleteCardInformation()
     .then((res) => {
 element.remove(res._id);
     })
@@ -203,7 +204,7 @@ console.error(err);
       cardDeleteVerify.renderloading(false);
     });
   });
-  cardDeleteVerify.open(cardData);
+  cardDeleteVerify.open();
 }
 
 
