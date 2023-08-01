@@ -185,11 +185,11 @@ editPopup.setEventListeners();
 
 const cardDeleteVerify = new PopupWithDeleteCard("#card-delete-modal", handleDeleteClick)
 
-function handleDeleteClick() {
+function handleDeleteClick(cardData) {
   cardDeleteVerify.setSubmitAction(() => {
     cardDeleteVerify.renderloading();
     api
-    .deleteCardInformation(this._cardData._id)
+    .deleteCardInformation(cardData)
     .then((res) => {
 element.remove(res._id);
     })
@@ -203,7 +203,7 @@ console.error(err);
       cardDeleteVerify.renderloading(false);
     });
   });
-  cardDeleteVerify.open(this._cardData._id);
+  cardDeleteVerify.open(cardData);
 }
 
 
