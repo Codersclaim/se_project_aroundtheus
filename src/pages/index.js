@@ -106,22 +106,9 @@ function handleProfileSubmit(data) {
 }
 
 const editPopup = new PopupWithForm("#profile-edit-modal", handleProfileSubmit);
-// (inputValues) =>
-// userInfo.setUserInfo(inputValues);
-// profileTitle.textContent = profileTitleName.value;
 
 editPopup.close();
 
-// function handleAddCardFormSubmit(inputValues) {
-//   const name = inputValues.title;
-//   const link = inputValues.url;
-
-//   const newCard = renderCard({ name, link });
-//   cardSection.addItem(newCard);
-//   newCardPopup.close();
-
-//   addFormValidator.toggleButtonState();
-// }
 
 // Validators
 

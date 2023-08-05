@@ -47,7 +47,7 @@ export default class Card {
   
   cardLikeButton.addEventListener("click", (evt) => {
     evt.preventDefault();
-    this._handleLikeClick(this._cardId);
+    this._handleLikeClick(this);
   })
   }
 
