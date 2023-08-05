@@ -65,7 +65,7 @@ export default class Api {
         console.log("Done adding New Card Information from Server");
       });
   }
-  
+
 deleteCardInformation(cardId) {
 return this._request(`${this.baseUrl}/cards/${cardId}`, {
   method: "DELETE",
@@ -75,10 +75,34 @@ return this._request(`${this.baseUrl}/cards/${cardId}`, {
 return this._checkResponse(res)
 })  
 .finally(() => {
-console.log("Done deleting card")
+console.log("Done deleting card");
   });
 }
 
+likesAddInformation(cardId) {
+  return this._request(`${this.baseUrl}/cards/likes/${cardId}`, {
+    method: "PUT",
+    headers: this._headers,
+    })
+  .then((res) => {
+  return this._checkResponse(res)
+  })  
+  .finally(() => {
+  console.log("Done Adding Likes");
+    });
+  }
+likesRemoveInformation(cardId) {
+  return this._request(`${this.baseUrl}/cards/likes/${cardId}`, {
+    method: "DELETE",
+    headers: this._headers,
+    })
+  .then((res) => {
+  return this._checkResponse(res)
+  })  
+  .finally(() => {
+  console.log("Done removing likes");
+    });
+}
 
 
 }

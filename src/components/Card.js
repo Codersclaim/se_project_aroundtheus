@@ -1,11 +1,13 @@
 
 export default class Card {
-  constructor({ name, link, _id }, cardSelector, handleCardClick, handleDeleteClick, userId) {
+  constructor({ name, link, likes, _id }, cardSelector, handleCardClick, handleDeleteClick, handleLikeClick, userId) {
     this._name = name;
     this._link = link;
     this._cardSelector = cardSelector;
     this._handleCardClick = handleCardClick;
     this._handleDeleteClick = handleDeleteClick;
+    this._handleLikeClick = handleLikeClick;
+    this._cardLikes = likes;
     this._userId = userId;
     this._cardId = _id;
   }
@@ -62,6 +64,36 @@ export default class Card {
     this._cardElement.remove();
     this._cardElement = null;
   }
+updateLike(result) {
+  this._cardLikes = result.likes;
+  this.revealCardLikes();
+}
+
+cardLiked() {
+  return this._cardLikes.every((likes) => {
+return likes._id === this._userId;
+  });
+  
+}
+
+revealCardLikes() {
+  if (this._cardLikes.length > 0) {
+this._cardElement.querySelector(".card__like-change").textContent = 
+this._cardLikes.length;
+  } else {
+    this._cardElement.querySelector(".card__like-change").textContent = "";
+  }
+  
+  if (this._cardLiked()) {
+    this._cardElement
+    .querySelector(".card__button")
+    .classList.add("card__like-button_active");
+  } else {
+    this._cardElement
+    .querySelector(".card__button")
+    .classList.remove("card__like-button_active");
+  }
+}
 
   _toggleLike() {
     this._cardElement

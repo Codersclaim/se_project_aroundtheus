@@ -79,7 +79,7 @@ popupImage.setEventListeners();
 // Functions
 // Render
 function renderCard(cardData, cardListEl) {
-  const card = new Card(cardData, "#card-template", handlePreviewImage, handleDeleteClick, userId);
+  const card = new Card(cardData, "#card-template", handlePreviewImage, handleDeleteClick, handleLikeClick, userId);
   return card.getCard();
 }
 
@@ -192,7 +192,7 @@ function handleDeleteClick(cardId) {
     api
     .deleteCardInformation()
     .then((res) => {
-element.remove(res._id);
+card.remove(res._id);
     })
     .then(() => {
       cardDeleteVerify.close();
@@ -206,8 +206,28 @@ console.error(err);
   });
   cardDeleteVerify.open();
 }
-
-
+// Likes
+function handleLikeClick(card) {
+  if(card.cardLiked()) {
+  api
+  .likesRemoveInformation(card._cardId)
+  .then((res)=> {
+card.updateLike(res);
+  })
+  .catch((err)=> {
+    console.error(err);
+  });
+} else {
+api
+.likesAddInformation(card._cardId)
+.then((res)=> {
+card.updateLike(res);
+})
+.catch((err) => {
+  console.error(err);
+});
+}
+}
 
 
 
