@@ -1,6 +1,12 @@
-
 export default class Card {
-  constructor({ name, link, likes, _id }, cardSelector, handleCardClick, handleDeleteClick, handleLikeClick, userId) {
+  constructor(
+    { name, link, likes, _id },
+    cardSelector,
+    handleCardClick,
+    handleDeleteClick,
+    handleLikeClick,
+    userId
+  ) {
     this._name = name;
     this._link = link;
     this._cardSelector = cardSelector;
@@ -11,14 +17,14 @@ export default class Card {
     this._userId = userId;
     this._cardId = _id;
   }
-    
-  
 
   _getTemplate() {
     return document
       .querySelector(this._cardSelector)
       .content.firstElementChild.cloneNode(true);
   }
+  
+  // Event Listeners
   _setEventListeners() {
     this._cardElement
       .querySelector(".card__button")
@@ -30,70 +36,54 @@ export default class Card {
       .querySelector(".card__delete-button")
       .addEventListener("click", (evt) => {
         evt.preventDefault();
-        // this._deleteCard(this._handleDeleteClick);
         this._handleDeleteClick(this._cardId);
       });
-  //   this._cardElement.querySelector(".card__image")
-  //     .addEventListener("click", () => {
-  //       this._imagePopup();
-  //     });
-  // }
-    this._cardImageEl
-    .addEventListener("click", () => {
-      this._handleCardClick({name: this._name, link: this._link});
-      // popupImage.open(this._cardImageEl);
-      // popupImage.open();
+
+    this._cardImageEl.addEventListener("click", () => {
+      this._handleCardClick({ name: this._name, link: this._link });
     });
-    // this._handleCardClick
+  const cardLikeButton = this._cardElement.querySelector(".card__button");
+  
+  
+  cardLikeButton.addEventListener("click", (evt) => {
+    evt.preventDefault();
+    this._handleLikeClick(this._cardId);
+  })
   }
-
-  // _imagePopup() {
-  //   const imagePopup = document.querySelector("#modal-preview-image");
-  //   this._cardImageEl = imagePopup.querySelector(".modal__image");
-  //   this._cardTitleEl = imagePopup.querySelector(
-  //     ".modal__preview-caption"
-  //   );
-  //   this._cardImageEl.src = this._link;
-  //   this._cardImageEl.alt = this._name;
-  //   this._cardTitleEl.textContent = this._name;
-
-  //   openModal(imagePopup);
-  // }
 
   _deleteCard() {
     this._cardElement.remove();
     this._cardElement = null;
   }
-updateLike(result) {
-  this._cardLikes = result.likes;
-  this.revealCardLikes();
-}
-
-cardLiked() {
-  return this._cardLikes.every((likes) => {
-return likes._id === this._userId;
-  });
-  
-}
-
-revealCardLikes() {
-  if (this._cardLikes.length > 0) {
-this._cardElement.querySelector(".card__like-change").textContent = 
-this._cardLikes.length;
-  } else {
-    this._cardElement.querySelector(".card__like-change").textContent = "";
+  updateLike(result) {
+    this._cardLikes = result.likes;
+    this.revealCardLikes();
   }
-  
-  if (this._cardLiked()) {
-    this._cardElement
-    .querySelector(".card__button")
-    .classList.add("card__like-button_active");
-  } else {
-    this._cardElement
-    .querySelector(".card__button")
-    .classList.remove("card__like-button_active");
+
+  cardLiked() {
+    return this._cardLikes.every((likes) => {
+      return likes._id === this._userId;
+    });
   }
-}
+
+  revealCardLikes() {
+    if (this._cardLikes.length > 0) {
+      this._cardElement.querySelector(".card__like-change").textContent =
+        this._cardLikes.length;
+    } else {
+      this._cardElement.querySelector(".card__like-change").textContent = "";
+    }
+
+    if (this._cardLiked()) {
+      this._cardElement
+        .querySelector(".card__button")
+        .classList.add("card__like-button_active");
+    } else {
+      this._cardElement
+        .querySelector(".card__button")
+        .classList.remove("card__like-button_active");
+    }
+  }
 
   _toggleLike() {
     this._cardElement
@@ -102,10 +92,6 @@ this._cardLikes.length;
   }
 
   getCard() {
-    // this._cardElement = document
-    //   .querySelector(this._cardSelector)
-    //   .content.querySelector(".card")
-    //   .cloneNode(true);
     this._cardElement = this._getTemplate();
     this._cardTitleEl = this._cardElement.querySelector(".card__title");
     this._cardImageEl = this._cardElement.querySelector(".card__image");
