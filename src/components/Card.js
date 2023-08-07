@@ -60,7 +60,7 @@ export default class Card {
   }
 
   cardLiked() {
-    return this._cardLikes.every((likes) => {
+    return this._cardLikes.some((likes) => {
       return likes._id === this._userId;
     });
   }
