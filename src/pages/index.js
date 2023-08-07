@@ -79,7 +79,14 @@ popupImage.setEventListeners();
 // Functions
 // Render
 function renderCard(cardData, cardListEl) {
-  const card = new Card(cardData, "#card-template", handlePreviewImage, handleDeleteClick, handleLikeClick, userId);
+  const card = new Card(
+    cardData,
+    "#card-template",
+    handlePreviewImage,
+    handleDeleteClick,
+    handleLikeClick,
+    userId
+  );
   return card.getCard();
 }
 
@@ -108,7 +115,6 @@ function handleProfileSubmit(data) {
 const editPopup = new PopupWithForm("#profile-edit-modal", handleProfileSubmit);
 
 editPopup.close();
-
 
 // Validators
 
@@ -170,51 +176,51 @@ editPopup.setEventListeners();
 
 // Delete Verify
 
-const cardDeleteVerify = new PopupWithDeleteCard("#card-delete-modal", handleDeleteClick)
+const cardDeleteVerify = new PopupWithDeleteCard(
+  "#card-delete-modal",
+  handleDeleteClick
+);
 
 function handleDeleteClick(cardId) {
   console.log(cardId);
   cardDeleteVerify.setSubmitAction(() => {
     cardDeleteVerify.renderloading();
     api
-    .deleteCardInformation()
-    .then((res) => {
-card.remove(res._id);
-    })
-    .then(() => {
-      cardDeleteVerify.close();
-    })
-    .catch((err) => {
-console.error(err);
-    })
-    .finally(()=> {
-      cardDeleteVerify.renderloading(false);
-    });
+      .deleteCardInformation()
+      .then((res) => {
+        card.remove(res._id);
+      })
+      .then(() => {
+        cardDeleteVerify.close();
+      })
+      .catch((err) => {
+        console.error(err);
+      })
+      .finally(() => {
+        cardDeleteVerify.renderloading(false);
+      });
   });
   cardDeleteVerify.open();
 }
 // Likes
 function handleLikeClick(card) {
-  if(card.cardLiked()) {
-  api
-  .likesRemoveInformation(card._cardId)
-  .then((res)=> {
-card.updateLike(res);
-  })
-  .catch((err)=> {
-    console.error(err);
-  });
-} else {
-api
-.likesAddInformation(card._cardId)
-.then((res)=> {
-card.updateLike(res);
-})
-.catch((err) => {
-  console.error(err);
-});
+  if (card.cardLiked()) {
+    api
+      .likesRemoveInformation(card._cardId)
+      .then((res) => {
+        card.updateLike(res);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  } else {
+    api
+      .likesAddInformation(card._cardId)
+      .then((res) => {
+        card.updateLike(res);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
 }
-}
-
-
-

@@ -23,7 +23,7 @@ export default class Card {
       .querySelector(this._cardSelector)
       .content.firstElementChild.cloneNode(true);
   }
-  
+
   // Event Listeners
   _setEventListeners() {
     this._cardElement
@@ -42,13 +42,12 @@ export default class Card {
     this._cardImageEl.addEventListener("click", () => {
       this._handleCardClick({ name: this._name, link: this._link });
     });
-  const cardLikeButton = this._cardElement.querySelector(".card__button");
-  
-  
-  cardLikeButton.addEventListener("click", (evt) => {
-    evt.preventDefault();
-    this._handleLikeClick(this);
-  })
+    const cardLikeButton = this._cardElement.querySelector(".card__button");
+
+    cardLikeButton.addEventListener("click", (evt) => {
+      evt.preventDefault();
+      this._handleLikeClick(this);
+    });
   }
 
   _deleteCard() {

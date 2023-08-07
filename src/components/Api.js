@@ -31,7 +31,7 @@ export default class Api {
         console.log("Done with initial cards");
       });
   }
-// User Profile
+  // User Profile
   editProfileInformation({ name, about }) {
     return this._request(`${this._baseUrl}/users/me`, {
       method: "PATCH",
@@ -66,43 +66,41 @@ export default class Api {
       });
   }
 
-deleteCardInformation(cardId) {
-return this._request(`${this.baseUrl}/cards/${cardId}`, {
-  method: "DELETE",
-  headers: this._headers,
-  })
-.then((res) => {
-return this._checkResponse(res)
-})  
-.finally(() => {
-console.log("Done deleting card");
-  });
-}
-
-likesAddInformation(cardId) {
-  return this._request(`${this.baseUrl}/cards/likes/${cardId}`, {
-    method: "PUT",
-    headers: this._headers,
+  deleteCardInformation(cardId) {
+    return this._request(`${this._baseUrl}/cards/${cardId}`, {
+      method: "DELETE",
+      headers: this._headers,
     })
-  .then((res) => {
-  return this._checkResponse(res)
-  })  
-  .finally(() => {
-  console.log("Done Adding Likes");
-    });
+      .then((res) => {
+        return this._checkResponse(res);
+      })
+      .finally(() => {
+        console.log("Done deleting card");
+      });
   }
-likesRemoveInformation(cardId) {
-  return this._request(`${this.baseUrl}/cards/likes/${cardId}`, {
-    method: "DELETE",
-    headers: this._headers,
+
+  likesAddInformation(cardId) {
+    return this._request(`${this._baseUrl}/cards/likes/${cardId}`, {
+      method: "PUT",
+      headers: this._headers,
     })
-  .then((res) => {
-  return this._checkResponse(res)
-  })  
-  .finally(() => {
-  console.log("Done removing likes");
-    });
-}
-
-
+      .then((res) => {
+        return this._checkResponse(res);
+      })
+      .finally(() => {
+        console.log("Done Adding Likes");
+      });
+  }
+  likesRemoveInformation(cardId) {
+    return this._request(`${this._baseUrl}/cards/likes/${cardId}`, {
+      method: "DELETE",
+      headers: this._headers,
+    })
+      .then((res) => {
+        return this._checkResponse(res);
+      })
+      .finally(() => {
+        console.log("Done removing likes");
+      });
+  }
 }
