@@ -178,7 +178,33 @@
     </div>
 
     <!-- Edit Avatar -->
+    <div class="modal avatar__modal" id="avatar-modal">
+      <div class="modal__container">
+        <button
+          class="modal__close"
+          id="profile-close-button-card"
+          type="button"
+        ></button>
 
+        <h3 class="modal__heading">Change profile picture</h3>
+
+        <form class="modal__form" id="add-card-form">
+          <label class="modal__field">
+            <input
+              type="url"
+              class="modal__input"
+              id="modal-avatar"
+              name="avatar"
+              placeholder="Image Link"
+              required
+            />
+            <span class="modal__error"></span>
+          </label>
+
+          <button type="submit" class="modal__button">Save</button>
+        </form>
+      </div>
+    </div>
     <!-- Template tag -->
     <template id="card-template">
       <li class="card">

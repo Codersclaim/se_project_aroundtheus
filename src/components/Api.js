@@ -48,6 +48,17 @@ export default class Api {
         console.log("Done sending User Information");
       });
   }
+  // Avatar
+  avatarInformation({ avatar }) {
+    return this._request(`${this._baseUrl})/cards/users/me/avatar`, {
+      method: "PATCH",
+      headers: this._headers,
+      body: JSON.stringify({
+        avatar,
+      }),
+    });
+  }
+
   // Adds New Card and sends to the server
   addNewCardInformation({ name, link }) {
     return this._request(`${this._baseUrl}/cards`, {
@@ -65,7 +76,7 @@ export default class Api {
         console.log("Done adding New Card Information from Server");
       });
   }
-
+  // Delete card
   deleteCardInformation(cardId) {
     return this._request(`${this._baseUrl}/cards/${cardId}`, {
       method: "DELETE",
@@ -78,29 +89,17 @@ export default class Api {
         console.log("Done deleting card");
       });
   }
-
+  // Add and Remove Like
   likesAddInformation(cardId) {
     return this._request(`${this._baseUrl}/cards/likes/${cardId}`, {
       method: "PUT",
       headers: this._headers,
-    })
-      .then((res) => {
-        return this._checkResponse(res);
-      })
-      .finally(() => {
-        console.log("Done Adding Likes");
-      });
+    });
   }
   likesRemoveInformation(cardId) {
     return this._request(`${this._baseUrl}/cards/likes/${cardId}`, {
       method: "DELETE",
       headers: this._headers,
-    })
-      .then((res) => {
-        return this._checkResponse(res);
-      })
-      .finally(() => {
-        console.log("Done removing likes");
-      });
+    });
   }
 }
