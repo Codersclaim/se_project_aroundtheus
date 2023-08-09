@@ -50,7 +50,8 @@ let userId;
 Promise.all([api.getUserInformation(), api.getInitialCards()])
   .then(([userData, cardData]) => {
     userId = userData._id;
-    userInfo.setUserInfo(userData);
+    userInfo.setUserInfo(userData.name, userData.about);
+    userInfo.setAvatarInfo(userData.avatar);
     cardSection = new Section(
       {
         items: cardData,
@@ -139,7 +140,7 @@ profileButtonEdit.addEventListener("click", () => {
   editFormValidator.resetValidation();
 });
 
-// new card
+// New card
 function handleNewCardSubmit(data) {
   popupImage.renderingLoading(data);
   api;
@@ -169,6 +170,7 @@ newCardPopup.setEventListeners();
 const userInfo = new UserInfo({
   userNameSelector: ".profile__title",
   userJobSelector: ".profile__description",
+  userAvatarSelector: ".profile__image"
 });
 //edit profile
 
@@ -224,3 +226,25 @@ function handleLikeClick(card) {
       });
   }
 }
+
+// Changing Avatar
+
+function handleAvatarImage() {
+avatarFormPopup.renderLoading();
+api
+.avatarInformation()
+.then((res) => {
+  userInfo.setUserInfo(res);
+})
+.then(() =>{
+  avatarFormPopup.close();
+})
+.catch((err)=> {
+console.error(err);
+})
+.finally(()=> {
+  avatarFormPopup.renderLoading(false);
+})
+}
+
+const avatarFormPopup = new PopupWithForm(".avatar__modal", handleAvatarImage);
