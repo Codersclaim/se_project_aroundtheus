@@ -28,6 +28,7 @@
   width: 120px;
   height: 120px;
   margin-right: 30px;
+  object-fit: cover;
 }
 
 .profile__paragraph {
@@ -101,7 +102,24 @@
   align-self: center;
 }
 
+.profile__avatar-container{
+position: relative;
+}
+.profile__avatar-container:hover{
+  opacity:.2
+}
+.profile__avatar-select {
+background: transparent url(../images/vectors/pen.svg) center no-repeat;
+position: absolute;
+height: 26px;
+width: 26px;
+/* border: none; */
+opacity: 0;
+transition: opacity .2s ease-in-out;
+top: 49px;
+left: 49px;
 
+}
 @media screen and (max-width: 757px) {
   .profile {
     max-width: 282px;

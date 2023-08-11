@@ -26,8 +26,6 @@ export default class Card {
 
   // Event Listeners
   _setEventListeners() {
-    
-
     this._cardElement
       .querySelector(".card__delete-button")
       .addEventListener("click", (evt) => {
@@ -79,8 +77,6 @@ export default class Card {
         .classList.remove("card__like-button_active");
     }
   }
-
-  
 
   getCard() {
     this._cardElement = this._getTemplate();
