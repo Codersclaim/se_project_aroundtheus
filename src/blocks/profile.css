@@ -106,14 +106,18 @@
 position: relative;
 }
 .profile__avatar-container:hover{
-  opacity:.2
+  opacity:.2;
+}
+.profile__avatar-container:hover .profile__avatar-select{
+  opacity: 1;
+  
 }
 .profile__avatar-select {
 background: transparent url(../images/vectors/pen.svg) center no-repeat;
 position: absolute;
 height: 26px;
 width: 26px;
-/* border: none; */
+border: none;
 opacity: 0;
 transition: opacity .2s ease-in-out;
 top: 49px;
