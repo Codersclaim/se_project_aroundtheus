@@ -97,20 +97,20 @@ function handlePreviewImage({ name, link }) {
 }
 
 function handleProfileSubmit(data) {
-  popupImage.renderLoading(data);
+  editPopup.renderLoading(data);
   api
-  editProfileInformation(data)
+  .editProfileInformation(data)
     .then((newUserData) => {
       userInfo.setUserInfo(newUserData);
     })
     .then(() => {
-      popupImage.close();
+      editPopup.close();
     })
     .catch((err) => {
       console.error(err);
     })
     .finally(() => {
-      popupImage.renderLoading(false);
+      editPopup.renderLoading(false);
     });
 }
 
@@ -143,20 +143,20 @@ profileButtonEdit.addEventListener("click", () => {
 
 // New card
 function handleNewCardSubmit(data) {
-  popupImage.renderLoading(data);
+  newCardPopup.renderLoading(data);
   api
-  editProfileInformation(data)
+  .editProfileInformation(data)
     .then((newUserData) => {
       userInfo.setUserInfo(newUserData);
     })
     .then(() => {
-      popupImage.close();
+      newCardPopup.close();
     })
     .catch((err) => {
       console.error(err);
     })
     .finally(() => {
-      popupImage.renderLoading(false);
+      newCardPopup.renderLoading(false);
     });
 }
 
