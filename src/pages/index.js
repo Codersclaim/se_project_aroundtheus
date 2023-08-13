@@ -33,6 +33,7 @@ import {
   previewExitButton,
   settings,
   submitButtonDelete,
+  profileAvatarButton,
 } from "../utils/constants.js";
 import Api from "../components/Api.js";
 
@@ -248,3 +249,11 @@ console.error(err);
 }
 
 const avatarFormPopup = new PopupWithForm(".avatar__modal", handleAvatarImage);
+
+profileAvatarButton.addEventListener("click", () =>{
+  const userData = userInfo.getUserInfo();
+  profileTitleName.value = userData.username;
+
+  avatarFormPopup.open();
+});
+avatarFormPopup.setEventListeners();
