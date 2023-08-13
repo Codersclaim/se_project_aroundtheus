@@ -84,6 +84,6 @@ export const settings = {
 };
 
 export const submitButtonDelete = document.querySelector(
-  "modal__delete-card-button"
+  ".modal__delete-card-button"
 );
-export const profileAvatarButton = document.querySelector("profile__avatar-select");
+export const profileAvatarButton = document.querySelector(".profile__avatar-select");

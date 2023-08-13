@@ -97,8 +97,8 @@ function handlePreviewImage({ name, link }) {
 }
 
 function handleProfileSubmit(data) {
-  popupImage.renderingLoading(data);
-  api;
+  popupImage.renderLoading(data);
+  api
   editProfileInformation(data)
     .then((newUserData) => {
       userInfo.setUserInfo(newUserData);
@@ -143,8 +143,8 @@ profileButtonEdit.addEventListener("click", () => {
 
 // New card
 function handleNewCardSubmit(data) {
-  popupImage.renderingLoading(data);
-  api;
+  popupImage.renderLoading(data);
+  api
   editProfileInformation(data)
     .then((newUserData) => {
       userInfo.setUserInfo(newUserData);
@@ -171,7 +171,7 @@ newCardPopup.setEventListeners();
 const userInfo = new UserInfo({
   userNameSelector: ".profile__title",
   userJobSelector: ".profile__description",
-  userAvatarSelector: ".profile__image"
+  userAvatarSelector: ".profile__image",
 });
 //edit profile
 
@@ -231,26 +231,26 @@ function handleLikeClick(card) {
 // Changing Avatar
 
 function handleAvatarImage() {
-avatarFormPopup.renderLoading();
-api
-.avatarInformation()
-.then((res) => {
-  userInfo.setUserInfo(res);
-})
-.then(() =>{
-  avatarFormPopup.close();
-})
-.catch((err)=> {
-console.error(err);
-})
-.finally(()=> {
-  avatarFormPopup.renderLoading(false);
-})
+  avatarFormPopup.renderLoading();
+  api
+    .avatarInformation()
+    .then((res) => {
+      userInfo.setUserInfo(res);
+    })
+    .then(() => {
+      avatarFormPopup.close();
+    })
+    .catch((err) => {
+      console.error(err);
+    })
+    .finally(() => {
+      avatarFormPopup.renderLoading(false);
+    });
 }
 
 const avatarFormPopup = new PopupWithForm(".avatar__modal", handleAvatarImage);
 
-profileAvatarButton.addEventListener("click", () =>{
+profileAvatarButton.addEventListener("click", () => {
   const userData = userInfo.getUserInfo();
   profileTitleName.value = userData.username;
 

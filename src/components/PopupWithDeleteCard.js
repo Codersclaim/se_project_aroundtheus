@@ -13,8 +13,15 @@ export default class PopupWithDeleteCard extends Popup {
       ".modal__delete-card-button"
     );
   }
-
-  _handleSubmit() {
+// renderLoading(isLoading, loading = 'Saving...') {
+// if (isLoading) {
+//   this._submitButton.textContent = loading;
+// } else {
+//   this._submitButton.textContent = this._submitButtonText;
+// }
+// }
+  
+_handleSubmit() {
     this._handleFormSubmit();
   }
 
