@@ -100,8 +100,8 @@ function handleProfileSubmit(data) {
   editPopup.renderLoading(data);
   api
   .editProfileInformation(data)
-    .then((newUserData) => {
-      userInfo.setUserInfo(newUserData);
+    .then((name, about) => {
+      userInfo.setUserInfo(name, about);
     })
     .then(() => {
       editPopup.close();
@@ -143,11 +143,13 @@ profileButtonEdit.addEventListener("click", () => {
 
 // New card
 function handleNewCardSubmit(data) {
+  console.log(data);
   newCardPopup.renderLoading(data);
   api
-  .editProfileInformation(data)
-    .then((newUserData) => {
-      userInfo.setUserInfo(newUserData);
+  .addNewCardInformation(data)
+    .then((data) => {
+      // userInfo.setUserInfo(newUserData);
+      newCardSection.renderItems([data]);
     })
     .then(() => {
       newCardPopup.close();
@@ -167,6 +169,8 @@ const newCardPopup = new PopupWithForm(
 );
 
 newCardPopup.setEventListeners();
+
+const newCardSection = new Section({renderer: renderCard}, ".cards");
 
 const userInfo = new UserInfo({
   userNameSelector: ".profile__title",
