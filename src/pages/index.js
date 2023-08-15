@@ -100,7 +100,7 @@ function handleProfileSubmit(data) {
   editPopup.renderLoading(data);
   api
   .editProfileInformation(data)
-    .then((name, about) => {
+    .then(({name, about}) => {
       userInfo.setUserInfo(name, about);
     })
     .then(() => {
