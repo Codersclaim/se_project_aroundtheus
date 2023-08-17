@@ -237,12 +237,17 @@ function handleLikeClick(card) {
 
 // Changing Avatar
 
-function handleAvatarImage() {
-  avatarFormPopup.renderLoading();
+function handleAvatarImage(data) {
+  console.log(data);
+  avatarFormPopup.renderLoading(data);
   api
-    .avatarInformation()
-    .then((res) => {
-      userInfo.setUserInfo(res);
+    .avatarInformation(data)
+    
+    .then((data) => {
+      // const newCard = renderCard(data);
+      // cardSection.addItem(newCard);
+      userInfo.setAvatarInfo(data);
+      console.log(data);
     })
     .then(() => {
       avatarFormPopup.close();
