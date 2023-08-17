@@ -49,7 +49,7 @@ export default class Api {
       });
   }
   // Avatar
-  avatarInformation(avatar) {
+  avatarInformation({avatar}) {
     return this._request(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,

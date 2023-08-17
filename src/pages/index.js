@@ -243,10 +243,10 @@ function handleAvatarImage(data) {
   api
     .avatarInformation(data)
     
-    .then((data) => {
+    .then(({avatar}) => {
       // const newCard = renderCard(data);
       // cardSection.addItem(newCard);
-      userInfo.setAvatarInfo(data);
+      userInfo.setAvatarInfo(avatar);
       console.log(data);
     })
     .then(() => {
