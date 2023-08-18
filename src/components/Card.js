@@ -1,6 +1,6 @@
 export default class Card {
   constructor(
-    { name, link, likes, _id },
+    { name, link, likes, _id, owner },
     cardSelector,
     handleCardClick,
     handleDeleteClick,
@@ -16,6 +16,7 @@ export default class Card {
     this._cardLikes = likes;
     this._userId = userId;
     this._cardId = _id;
+    this._ownerId = owner._id;
   }
 
   _getTemplate() {
@@ -44,7 +45,7 @@ export default class Card {
     });
   }
 
-  _deleteCard() {
+  deleteCard() {
     this._cardElement.remove();
     this._cardElement = null;
   }
@@ -89,7 +90,9 @@ export default class Card {
     this._cardImageEl.alt = this._name;
     this.revealCardLikes();
     this._setEventListeners();
-
+    if (this._userId !== this._ownerId) {
+      this._cardElement.querySelector(".card__delete-button").remove();
+    }
     return this._cardElement;
   }
 }

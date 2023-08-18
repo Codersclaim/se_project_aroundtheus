@@ -119,7 +119,7 @@ const editPopup = new PopupWithForm("#profile-edit-modal", handleProfileSubmit);
 editPopup.close();
 
 // Validators
-// edit Validator
+// Edit Validator
 const editFormValidator = new FormValidator(settings, profileEditForm);
 editFormValidator.enableValidation();
 
@@ -130,7 +130,7 @@ const avatarForm = document.querySelector("#add-avatar");
 const avatarValidator = new FormValidator(settings, avatarForm);
 avatarValidator.enableValidation();
 
-// new card validator
+// New card validator
 addNewCardButton.addEventListener("click", () => {
   addFormValidator.resetValidation();
   newCardPopup.open();
@@ -190,24 +190,23 @@ const cardDeleteVerify = new PopupWithDeleteCard(
   "#card-delete-modal",
   handleDeleteClick
 );
+cardDeleteVerify.setEventListeners();
 
 function handleDeleteClick(cardId) {
   console.log(cardId);
   cardDeleteVerify.setSubmitAction(() => {
-    cardDeleteVerify.renderloading();
+    cardDeleteVerify.renderLoading();
     api
-      .deleteCardInformation()
+      .deleteCardInformation(cardId)
       .then((res) => {
-        card.remove(res._id);
-      })
-      .then(() => {
+        this.deleteCard(res);
         cardDeleteVerify.close();
       })
       .catch((err) => {
         console.error(err);
       })
       .finally(() => {
-        cardDeleteVerify.renderloading(false);
+        cardDeleteVerify.renderLoading(false);
       });
   });
   cardDeleteVerify.open();
@@ -242,10 +241,8 @@ function handleAvatarImage(data) {
   avatarFormPopup.renderLoading(data);
   api
     .avatarInformation(data)
-    
-    .then(({avatar}) => {
-      // const newCard = renderCard(data);
-      // cardSection.addItem(newCard);
+
+    .then(({ avatar }) => {
       userInfo.setAvatarInfo(avatar);
       console.log(data);
     })

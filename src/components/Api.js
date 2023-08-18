@@ -49,7 +49,7 @@ export default class Api {
       });
   }
   // Avatar
-  avatarInformation({avatar}) {
+  avatarInformation({ avatar }) {
     return this._request(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
@@ -83,7 +83,7 @@ export default class Api {
       headers: this._headers,
     })
       .then((res) => {
-        return this._checkResponse(res);
+        return res;
       })
       .finally(() => {
         console.log("Done deleting card");
