@@ -102,8 +102,6 @@ function handleProfileSubmit(data) {
     .editProfileInformation(data)
     .then(({ name, about }) => {
       userInfo.setUserInfo(name, about);
-    })
-    .then(() => {
       editPopup.close();
     })
     .catch((err) => {
@@ -195,7 +193,7 @@ cardDeleteVerify.setEventListeners();
 function handleDeleteClick(cardId) {
   console.log(cardId);
   cardDeleteVerify.setSubmitAction(() => {
-    cardDeleteVerify.renderLoading();
+    cardDeleteVerify.renderLoading(cardId);
     api
       .deleteCardInformation(cardId)
       .then((res) => {
@@ -215,7 +213,7 @@ function handleDeleteClick(cardId) {
 function handleLikeClick(card) {
   if (card.cardLiked()) {
     api
-      .likesRemoveInformation(card._cardId)
+      .removeLike(card._cardId)
       .then((res) => {
         card.updateLike(res);
       })
@@ -224,7 +222,7 @@ function handleLikeClick(card) {
       });
   } else {
     api
-      .likesAddInformation(card._cardId)
+      .addLike(card._cardId)
       .then((res) => {
         card.updateLike(res);
       })
@@ -240,7 +238,7 @@ function handleAvatarImage(data) {
   console.log(data);
   avatarFormPopup.renderLoading(data);
   api
-    .avatarInformation(data)
+    .updateAvatar(data)
 
     .then(({ avatar }) => {
       userInfo.setAvatarInfo(avatar);

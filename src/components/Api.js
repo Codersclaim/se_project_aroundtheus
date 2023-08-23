@@ -1,6 +1,7 @@
 export default class Api {
   constructor({ baseUrl, headers }) {
-    (this._baseUrl = baseUrl), (this._headers = headers);
+    (this._baseUrl = baseUrl);
+    (this._headers = headers);
   }
 
   _checkResponse(res) {
@@ -41,15 +42,12 @@ export default class Api {
         about,
       }),
     })
-      .then((response) => {
-        return response;
-      })
       .finally(() => {
         console.log("Done sending User Information");
       });
   }
   // Avatar
-  avatarInformation({ avatar }) {
+  updateAvatar({ avatar }) {
     return this._request(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
@@ -90,13 +88,13 @@ export default class Api {
       });
   }
   // Add and Remove Like
-  likesAddInformation(cardId) {
+  addLike(cardId) {
     return this._request(`${this._baseUrl}/cards/likes/${cardId}`, {
       method: "PUT",
       headers: this._headers,
     });
   }
-  likesRemoveInformation(cardId) {
+  removeLike(cardId) {
     return this._request(`${this._baseUrl}/cards/likes/${cardId}`, {
       method: "DELETE",
       headers: this._headers,
